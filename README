@@ -1,0 +1,187 @@
+学生-老师 多对多
+学生-班级  多对一
+老师-班级  没关系
+
+演示：
+    1，关联查询（1V1,1V对，多V多)
+    2，返回map(其中1列为主键)（筛选后的数据，作为key的列必须唯一）
+    3，参数：list,map,entity,set,arr  entity{list}(entity里面包裹list)
+    4, insert返回主键
+    5，批量插入（1对多插入，values id in(1,2,3) ;; values( id=1,name="zsc"),(id=2,name="hhh")）
+
+########################################################################################################################
+权限系统
+    ays_admin
+
+    sys_admin_fun
+
+    sys_admin_role
+
+    sys_role
+
+    sys_role_fun
+
+########################################################################################################################
+包
+    document    sql文件
+    base        项目通用
+    constants   常量
+    general     逆向工程生成的dao,entity
+    tbpractice  功能实现包
+        utils   该项目独有的方法工具包
+########################################################################################################################
+    mysql 8.0.12
+            1，设置时区，编码
+                spring.datasource.url=jdbc:mysql://localhost:3306/practice?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT
+            2，驱动8.0.15版本使用的
+                spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+                驱动5.1.35版本
+                spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+
+    mysql 8.0.12安装
+             my.ini(有时会要两个斜杠)
+                basedir=D:\\Java\\mysql-8.0.12-winx64
+             管理员权限进入cmd  bin目录
+              mysqld --initialize --console(记住密码)
+               安装
+                    mysqld --install
+               启动
+                    net start mysql
+               卸载
+                    mysqld --remove
+               停止服务
+                    net stop mysql
+
+             https://blog.csdn.net/missing2011/article/details/81474857?tdsourcetag=s_pcqq_aiomsg
+
+########################################################################################################################
+
+
+
+    1，替换内置的tomcat                pom.xml与TbpracticeApplication
+    2，全局跨域设置                    com.zsc.collocate.spring.WebMvcConfig
+        https://www.jianshu.com/p/e124fdf59a02
+    3，全局异常处理                    com.zsc.base.handler.GlobalExceptionHandler
+    4，fastJson返回参数处理
+
+
+
+
+
+
+
+########################################################################################################################
+mybatis
+    1，association ，collection
+        (多条数据很容易自动合并成一条，造成缺失，特别是使用pageHelp插件，尽量不用)
+        两条及其以上的封装的最外层的实体相同时，mybatis自动set最新的association,或者collection，造成覆盖
+
+        解决办法1：
+            association的对象里的属性，直接放到最外层;collection的数据，要先查student,再根据StudentIdSet查TeacherMap,
+            在业务层解决
+        解决办法2：
+            不再分页，使用where限制查询,(条件可以是userIdList)
+
+    2,@Param是一个对象
+
+mybatis的优化操作
+    com.zsc.tbpractice.dao.UserMapperExt
+########################################################################################################################
+单元测试
+    @RunWith(SpringRunner.class)
+    @SpringBootTest()
+       类上添加注释
+     @Test
+        方法上添加
+########################################################################################################################
+事务
+    启动类TbpracticeApplication添加注解  (自定义事务管理器的时候需要加上)
+        @EnableTransactionManagement  //开启事务
+    方法上添加注解
+        @Transactional //必须添加
+
+    https://blog.csdn.net/wohaqiyi/article/details/72895983
+########################################################################################################################
+Spring Boot去除内嵌tomcat
+    1,移除嵌入式tomcat插件
+    2,添加外置tomcat
+    3,修改启动类，并重写初始化方法
+              <!-- 1,移除嵌入式tomcat插件 -->
+                        <exclusions>
+                            <exclusion>
+                                <groupId>org.springframework.boot</groupId>
+                                <artifactId>spring-boot-starter-tomcat</artifactId>
+                            </exclusion>
+                            <exclusion>
+                                <artifactId>logback-classic</artifactId>
+                                <groupId>ch.qos.logback</groupId>
+                            </exclusion>
+                        </exclusions>
+
+              <!--2,添加外置tomcat-->
+                <dependency>
+                          <groupId>org.springframework.boot</groupId>
+                          <artifactId>spring-boot-starter-tomcat</artifactId>
+                          <!--<scope>provided</scope>-->
+                </dependency>
+              <--3,修改启动类，并重写初始化方法 -->
+                        extends SpringBootServletInitializer
+
+                         @Override
+                            protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+                                return builder.sources(TbpracticeApplication.class);
+                            }
+#####################################################################################################################
+http
+    "OPTIONS".equals(request.getMethod())
+        在有很多情况下,当我们在js里面调用一次ajax请求时,在浏览器那边却会查询到两次请求,第一次的Request Method参数是OPTIONS,还有一次就是我们真正的请求,比如get或是post请求方式
+        查阅相关的资料之后发现,这是浏览器对复杂跨域请求的一种处理方式,在真正发送请求之前,会先进行一次预请求,就是我们刚刚说到的参数为OPTIONS的第一次请求,他的作用是用于试探性的
+        服务器响应是否正确, 即是否能接受真正的请求,如果在options请求之后获取到的响应是拒绝性质的,例如500等http状态,那么它就会停止第二次的真正请求的访问
+
+        大致说明一下,有三种方式会导致这种现象:
+        1:请求的方法不是GET/HEAD/POST
+        2:POST请求的Content-Type并非application/x-www-form-urlencoded, multipart/form-data, 或text/plain
+        3:请求设置了自定义的header字段
+        比如我的我的Content-Type设置为“application/json;charset=utf-8”并且自定义了header选项导致了这种情况。
+#####################################################################################################################
+idea插件
+    findBug-IDEA            查找bug
+    Maven helper            依赖冲突
+    Free Mybatis plugin     mapper跳转
+
+
+
+#####################################################################################################################
+问题
+    1，resultMap中的id与result的不同
+
+
+
+    ctrl+o ：实现接口的非抽象方法
+    ctrl+shift+F8 ：去掉断点
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

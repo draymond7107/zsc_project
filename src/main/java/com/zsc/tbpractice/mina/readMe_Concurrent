@@ -1,0 +1,9 @@
+java.util.Conncurrent.*并发包
+            https://blog.csdn.net/mingmingzhanghao1/article/details/82215947
+    常用的类
+        ConcorrentHashMap
+                -HashMap
+                -HashTable
+
+        CopyOnWriteArrayList
+

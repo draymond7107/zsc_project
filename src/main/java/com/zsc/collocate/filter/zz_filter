@@ -1,0 +1,21 @@
+过滤器
+    1、Filter是依赖于Servlet容器
+
+配置方法
+    方法1
+       某个功能类实现Filter接口，重写init，doFilter，destroy方法
+       编写“配置类”，使用Configration标记为“配置类”
+
+    方法2
+       某个功能类实现Filter接口，重写init，doFilter，destroy方法
+       在这个类上添加注解@WebFilter(urlPatterns = "/*", filterName = "logFilter2")
+
+        注：@WebFilter是Servlet3.0的规范，不是spring boot提供的，所有需要在“启动类”添加注解@ServletComponetScan("com.zsc.collocate.filter")，指定扫描的包
+
+
+    使用场景
+        1，适合在功能接口执行前后都需要某个资源的情况（使用拦截器资源不再同一个方法）
+
+
+
+
