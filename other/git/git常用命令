@@ -1,0 +1,57 @@
+echo "# zsc_project" >> README.md
+git init
+git add README.md       //  git add .
+git commit -m "first commit"
+git remote add origin git@github.com:draymond7107/zsc_project.git
+git push -u origin master
+
+文件添加到仓库    git add xx.txt
+ -m "本次提交的说明"
+查看文件内容      cat xx.txt
+查看历史记录      git log
+查看历史的版本号  git log --pretty=oneline
+回到上一个版本    git reset --hard HEAD^   (HEAD~100)
+回到指定版本号    git reset --hard 1094a
+查看命令的记录    git reflog
+查看版本库状态    git status
+查看工作区和版本库最新版本的区别 git diff HEAD -- xxx.txt
+撤销修改          git checkout -- xxx.txt
+删除文件          rm xxx.txt
+从版本库删除文件  git rm xxx.txt
+本地关联远程仓库  git remote add origin git@github.com:帐户名/仓库名.git
+取消远程库的关联  git remote remove origin
+本地库内容推送到远程库 git push -u origin master 首次推送添加-u
+克隆远程仓库      git clone git@github.com:帐户名/仓库名.git
+创建分支并切换到分支 git checkout -b dev
+创建分支          git branch dev
+切换分支          git checkout dev
+查看分支          git branch
+合并分支          git merge dev   (把dev分支合并到当前分支上)
+删除分支          git branch -d dev
+合禁用Fast forword模式 git merge --no--ff -m "merge with no--ff"
+git储藏           git stash
+查看储藏信息      git stash list
+恢复之前缓存的工作目录 git stash apply  (不删除stash)
+恢复之前缓存的工作目录 git stash pop   (删除stash)
+恢复指定stash     git stash apply stash@{0}
+分支强制删除      git branch -D dev  (未合并)
+查看远程仓库信息  git remote -v(-v详细信息)
+推送分支          git push origin master
+创建本地dev分支   git checkout -b dev origin/dev
+取回远程主机某个分支的更新 git pull <远程主机名> <远程分支名>:<本地分支名>
+显示 ASCII 图形表示的分支合并历史 git log --graph
+把提交历史整理成直线 git rebase
+打标签            git tag v1.0(指定commit添加id)
+查看所有标签      git tag
+查看标签信息      git show v0.9
+创建带有说明的标签，用-a指定标签名，-m指定说明文字：git tag -a v0.1 -m "version 0.1 released" 1094adb
+删除标签          git tag -d v0.1
+推送标签到远程    git push origin v1.0
+一次性推送全部尚未推送到远程的本地标签 git push origin --tags
+删除一个远程标签  git push origin :refs/tags/<tagname> (要先删除本地标签)
+
+删除GitHub或者GitLab 上的文件夹
+	git rm -r --cached  .setting #--cached不会把本地的.setting删除  （.setting 文件夹为案例）
+	git commit -m 'delete .setting dir'
+	git push -u origin master
+

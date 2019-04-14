@@ -1,0 +1,111 @@
+	1、文件/文件夹管理
+
+		ls 列出当前目录下的所有文件（不显示隐藏文件）
+
+		ls -a 列出当前目录下的所有文件（显示隐藏文件）
+
+		ls -l列出当前目录下所有文件的详细信息
+
+		cd 或者 cd ~进入用户主目录
+
+		cd .. 回到上一级目录
+
+		cd -返回进入此目录之前所在的目录
+
+		mkdir dirname 新建目录
+
+		rmdir dirname 删除空目录
+
+		rm filename 删除文件
+
+		rm -rf dirname 删除非空目录及其包含的所有文件
+
+		mv file1 file2将文件1重命名为文件2
+
+		mv file1 dir1 将文件1移动到目录1中
+
+		cp -r dir1 dir2 将目录1复制为目录2  cp -r /home/www/xxx/statics/. /home/www/statics
+
+		find 路径 -name “字符串” 查找路径所在范围内满足字符串匹配的文件和目录
+
+		rz (receive,linux从本地接受文件，需要选择路径，选择本地文件 )
+
+		sz filename(发送文件到本地，需要选择路径)
+
+		使用xftp
+
+	2、压缩与解压
+
+			压缩
+				tar -cvf jpg.tar *.jpg 		//将目录里所有jpg文件打包成tar.jpg
+
+				tar -czf jpg.tar.gz *.jpg   //将目录里所有jpg文件打包成jpg.tar后，并且将其用gzip压缩，生成一个gzip压缩过的包，命名为jpg.tar.gz
+
+				tar -cjf jpg.tar.bz2 *.jpg 	//将目录里所有jpg文件打包成jpg.tar后，并且将其用bzip2压缩，生成一个bzip2压缩过的包，命名为jpg.tar.bz2
+
+				tar -cZf jpg.tar.Z *.jpg   	//将目录里所有jpg文件打包成jpg.tar后，并且将其用compress压缩，生成一个umcompress压缩过的包，命名为jpg.tar.Z
+
+				rar a jpg.rar *.jpg 		//rar格式的压缩，需要先下载rar for linux
+
+				zip jpg.zip *.jpg 			//zip格式的压缩，需要先下载zip for linux
+
+			解压
+				tar -xvf file.tar 			//解压 tar包
+
+				tar -xzvf file.tar.gz 		//解压tar.gz
+
+				tar -xjvf file.tar.bz2   	//解压 tar.bz2
+
+				tar -xZvf file.tar.Z   		//解压tar.Z
+
+				unrar e file.rar 			//解压rar
+
+				unzip file.zip 				//解压zip
+
+			解压jdk到指定文件夹：
+				tar -xzvf jdk-8u131-linux-x64.tar.gz -C /usr/local/java
+
+	3、程序安装与卸载
+		安装
+			apt-get 程序安装与卸载命令的标志，需要管理员权限
+			install 安装指定程序，举例：sudo apt-get install vim
+		卸载
+			remove 卸载指定的程序，一般最好加上“--purge”执行清除式卸载；并在程序名称后添加*号。举例：sudo apt-get remove --purge nvidia* 卸载 nvidia 的驱动及其配置文件
+		更新
+			update 更新本地软件源文件，需要管理员权限，举例：sudo apt-get update
+
+	4、文件编辑
+
+
+		1.跳到文本的最后一行：按“G”,即“shift+g”
+
+		2.跳到最后一行的最后一个字符 ： 先重复1的操作即按“G”，之后按“$”键，即“shift+4”。
+
+		3.跳到第一行的第一个字符：先按两次“g”，
+
+		4.跳转到当前行的第一个字符：在当前行按“0”。
+		https://blog.csdn.net/zcl369369/article/details/7551962
+
+
+
+	5、系统管理
+		uname -a 查看内核版本
+
+		cat /etc/issue 查看ubuntu版本
+
+		sudo fdisk -l 查看磁盘信息
+
+		df -h 查看硬盘剩余空间
+
+		free -m 查看当前的内存使用情况
+
+		ps -A 查看当前有哪些进程
+
+		kill 进程号或者 killall 进程名 杀死进程
+
+		kill -9 进程号 强制杀死进程
+
+		https://blog.csdn.net/u014311799/article/details/78775175
+
+
+
