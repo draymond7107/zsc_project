@@ -236,7 +236,7 @@ public class CryptUtils {
             byte[] result = dg.digest(inbuf.getBytes(charset));
             StringBuilder sb = new StringBuilder();
             for (byte bit : result) {
-                sb.append(String.format("%02x", bit));
+                sb.append(String.format("%02x", bit));//X 表示以十六进制形式输出；02 表示不足两位，前面补0输出；如果超过两位，则实际输出
             }
             return sb.toString();
         } catch (Exception e) {

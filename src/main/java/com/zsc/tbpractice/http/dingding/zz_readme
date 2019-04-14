@@ -1,0 +1,8 @@
+钉钉对接
+      1)  https协议
+      2)  JSON格式数据
+      3)  UTF-8编码
+      4)  POST/GET请求
+            头信息:Content-Type:application/Json
+
+

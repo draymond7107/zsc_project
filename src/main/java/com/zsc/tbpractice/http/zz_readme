@@ -4,3 +4,18 @@ http详解
         请求行
         请求头
         请求体
+
+    2) 使用HttpUtils.post()方法
+        要点
+          1 url
+          2 data
+          3 header
+        难点
+          1 data
+
+        原因
+          签名
+
+
+
+
