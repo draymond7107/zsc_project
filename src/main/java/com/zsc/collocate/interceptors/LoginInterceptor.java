@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * 拦截器-登录业务拦截
- *
+ *在com.zsc.collocate.spring.WebMvcConfig注册Bean
  * @author ZhangSuchao
  * @create 2019/4/12
  * @since 1.0.0

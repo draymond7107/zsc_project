@@ -1,0 +1,7 @@
+    ctrl+o                  实现接口的非抽象方法
+    ctrl+shift+F8           去掉断点
+    ctrl+shift+f            全局搜索
+    ctrl+f                  本页搜索
+    Alt+entry               补全接收值
+    ctrl+shift+space        由前往后补全代码
+

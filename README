@@ -63,9 +63,10 @@
         https://www.jianshu.com/p/e124fdf59a02
     3，全局异常处理                    com.zsc.base.handler.GlobalExceptionHandler
     4，fastJson返回参数处理
-
-
-
+    5，过滤器                           com.zsc.collocate.filter
+    6，拦截器                           com.zsc.collocate.interceptors
+    7，监听器
+    8，
 
 
 
@@ -148,7 +149,7 @@ idea插件
     findBug-IDEA            查找bug
     Maven helper            依赖冲突
     Free Mybatis plugin     mapper跳转
-
+    VisualVM                性能分析
 
 
 #####################################################################################################################
@@ -157,8 +158,7 @@ idea插件
 
 
 
-    ctrl+o ：实现接口的非抽象方法
-    ctrl+shift+F8 ：去掉断点
+
 
 
 

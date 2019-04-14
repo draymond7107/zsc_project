@@ -461,7 +461,7 @@ public class RequestUtils {
 		//操作系统
 		if(userAgent.contains("Linux")){
 			info.setOs(UserAgentInfo.CLIENT_OS_LINUX);
-			info.setOsName("linux");
+			info.setOsName("linux常用命令");
 		}else if(userAgent.contains("Mac")){
 			info.setOs(UserAgentInfo.CLIENT_OS_MAC);
 			info.setOsName("mac");
