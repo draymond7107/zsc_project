@@ -1,8 +1,6 @@
-package com.zsc.tbpractice.DingDing;
+package com.zsc.tbpractice.http.dingding;
 
 
-import com.zsc.tbpractice.http.dingding.DingDing;
-import com.zsc.tbpractice.http.dingding.DingDingUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +12,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class DingDingUserTest {
 
     @Autowired
-    private DingDing dingDing;
+    private TongXunLu dingDing;
 
     @Test
     public void getAccessTokenTest() {
@@ -28,12 +26,13 @@ public class DingDingUserTest {
 
     }
 
+
     @Test
     public void getDingDingSign() {
 
         try {
 
-            DingDingUtils.getDingDingSign("testappSecret");
+         //   DingDingUtils.getDingDingSign("testappSecret");
         } catch (Exception e) {
             e.printStackTrace();
         }
