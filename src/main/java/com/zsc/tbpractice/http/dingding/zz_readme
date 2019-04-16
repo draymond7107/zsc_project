@@ -6,3 +6,31 @@
             头信息:Content-Type:application/Json
 
 
+ThirdPartApp    第三方企业应用
+    1)  企业授权开通应用
+    2)  第三方应用提供商：收到授权开通事件，正确处理后完成企业授权流程
+
+    详细流程：
+        开发测试阶段
+            开发者后台给体验组织开通三方应用
+            钉钉后台会推送授权信息到第三方应用后台
+        发布上线后
+            应用的线下部署二维码进行扫码安装
+            企业管理员可以在应用市场授权开通第三方应用，开通后，钉钉后台会推送授权信息到第三方应用后台
+
+        suiteId:5744001
+
+        appId:18684
+
+        suiteKey:suiteg2d9t9fgpp8wb45u
+
+        suiteSecret:x2wn_bE0c82qFIRomre3Vcw4AK8FgHICoHhTh_RUFejVK-DLk3tkpYE35zjhyMuK
+
+JSAPI
+    H5微应用JSAPI与钉钉对接
+
+
+
+
+
+
