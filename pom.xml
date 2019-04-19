@@ -7,13 +7,14 @@
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.1.2.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
+
     </parent>
     <groupId>com.zsc</groupId>
     <artifactId>tbpractice</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>tbpractice</name>
     <description>Demo project for Spring Boot</description>
-
+    <packaging>war</packaging>
     <!--配置属性-->
     <properties>
         <java.version>1.8</java.version>
@@ -127,25 +128,13 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.15</version>
         </dependency>
-        <!--数据库连接池-->
-        <!--<dependency>-->
-        <!--<groupId>com.alibaba</groupId>-->
-        <!--<artifactId>druid</artifactId>-->
-        <!--<version>1.0.27</version>-->
-        <!--</dependency>-->
+
         <!-- alibaba的druid数据库连接池 -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
             <version>1.1.10</version>
         </dependency>
-        <!-- 分页插件 -->
-        <!--<dependency>-->
-        <!--<groupId>com.github.pagehelper</groupId>-->
-        <!--<artifactId>pagehelper</artifactId>-->
-        <!--<version>5.0.4</version>-->
-        <!--</dependency>-->
-
         <!--pagehelper -->
         <dependency>
             <groupId>com.github.pagehelper</groupId>
@@ -165,12 +154,6 @@
             <version>1.46</version>
         </dependency>
 
-        <!--JJWT库 security安全依赖-->
-        <!--<dependency>-->
-        <!--<groupId>org.springframework.boot</groupId>-->
-        <!--<artifactId>spring-boot-starter-security</artifactId>-->
-        <!--<version>1.5.6.RELEASE</version>-->
-        <!--</dependency>-->
 
         <!--http请求框架-->
         <dependency>
@@ -232,7 +215,14 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
+        <!--引用外部jar包-->
+        <dependency>
+            <groupId>com.taobao.top</groupId>
+            <artifactId>top-api-sdk-dev</artifactId>
+            <version>dingtalk-SNAPSHOT</version>
+            <scope>system</scope>
+            <systemPath>${pom.basedir}/libs/taobao-sdk-java-auto_1479188381469-20190408.jar</systemPath>
+        </dependency>
     </dependencies>
 
 
@@ -265,13 +255,42 @@
             <!--</dependency>-->
             <!--</dependencies>-->
             <!--</plugin>-->
+
+
+            <!--jar包配置-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <configuration>
+                    <classesDirectory>target/classes/</classesDirectory>
                     <excludes>
                         <exclude>*.*</exclude>
                     </excludes>
+                    <archive>
+                        <manifest>
+                            <!-- 主函数的入口 -->
+                            <mainClass>com.zsc.tbpractice.TbpracticeApplication</mainClass>
+                            <!-- 打包时 MANIFEST.MF文件不记录的时间戳版本 -->
+                            <useUniqueVersions>false</useUniqueVersions>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                        </manifest>
+                        <manifestEntries>
+                            <Class-Path>.</Class-Path>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+
+            <!--war包配置-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <!--默认编译路径-->
+                    <!--<outputDirectory>${basedir}/target</outputDirectory>-->
+                    <!--表示将所有的webapps项目下的文件拷贝到相应路径-->
+                    <webappDirectory>D:/server</webappDirectory>
                 </configuration>
             </plugin>
             <plugin>

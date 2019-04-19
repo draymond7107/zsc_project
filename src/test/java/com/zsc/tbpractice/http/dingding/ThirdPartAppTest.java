@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.Map;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest()
 public class ThirdPartAppTest {
@@ -28,8 +30,8 @@ public class ThirdPartAppTest {
             String accessToken = thirdPartApp.get_corp_token("ding57c02b5dcf8ed7ce35c2f4657eb6378f");
 
 
-            JsonResult list = tongXunLu.getUserByUserid(accessToken, "1555331032342-151744383");
-       //     JsonResult list = tongXunLu.getDeptMemberUserIdListByDeptId(accessToken, "111656661");
+            Map<String, Object> user = tongXunLu.getUserByUserid(accessToken, "1555331032342-151744383");
+            //     JsonResult list = tongXunLu.getDeptMemberUserIdListByDeptId(accessToken, "111656661");
         //    JsonResult list1 = tongXunLu.getDepartmentIdListByParentId(accessToken, "1");
             //  (String accessToken, String departmentId, Long offset, Integer size, String order) throws Exception {
       //      JsonResult list1 = tongXunLu.getDepartmentInfoBydepartmentid(accessToken, "111457582",20L,1,"entry_asc");

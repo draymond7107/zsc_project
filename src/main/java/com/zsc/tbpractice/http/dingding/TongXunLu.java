@@ -28,6 +28,7 @@ import javax.crypto.spec.SecretKeySpec;
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author ZhangSuchao
@@ -40,7 +41,6 @@ public class TongXunLu {
     static Log logger = LogFactory.getLog(TbpracticeApplication.class);
 
     //AccessToken是企业自建应用或者被企业授权开通的第三方应用访问钉钉服务端开放接口的全局唯一凭证。
-    @RequestMapping("/getAccessToken")
     public String getAccessToken() throws Exception {
         logger.info("获取钉钉AccessToken");
         String accessKey = "dingrinbe0lsbhkidqyy";
@@ -71,14 +71,34 @@ public class TongXunLu {
     }
 
     /**
+     * 根据accessToken与code获得用户id
+     *
+     * @param accessToken
+     * @param code
+     * @return
+     * @throws Exception
+     */
+    public String getUserIdByAccessTokenAndCode(String accessToken, String code) throws Exception {
+
+
+        String url = "https://oapi.dingtalk.com/user/getuserinfo" + "?access_token=" + accessToken + "&code=" + code;
+        List<Header> headers = DingDingUtils.getShortHeader();
+        HttpResult httpResult = HttpUtils.get(url, headers);
+        String html = httpResult.getHtml();
+        logger.error(html);
+        //FIXME
+        return "1";
+    }
+
+    /**
      * 获取用户详情
      *
      * @param accessToken
      * @param userid
      * @return
      */
-    @RequestMapping("/getUserByUserid")
-    public JsonResult getUserByUserid(String accessToken, String userid) throws Exception {
+    //FIXME 封装到一个对象里面
+    public Map<String, Object> getUserByUserid(String accessToken, String userid) throws Exception {
         //头信息
         List<Header> shortHeader = DingDingUtils.getShortHeader();
         //Url

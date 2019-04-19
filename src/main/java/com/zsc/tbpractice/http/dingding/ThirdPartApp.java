@@ -26,7 +26,8 @@ import java.util.List;
 import static com.zsc.tbpractice.mina.concurrent.Main.httpResult;
 
 /**
- * 第三方企业应用
+ * 第三方应用授权
+ * 获取授权码，获取企业授权信息，获取授权应用，回调
  *
  * @author ZhangSuchao
  * @create 2019/4/15
@@ -78,6 +79,7 @@ public class ThirdPartApp {
 
         return null;
     }
+
 
 
 
