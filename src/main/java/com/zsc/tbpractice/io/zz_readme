@@ -1,0 +1,44 @@
+io操作（window系统）
+    IO本质
+        对子节，字符处理
+    字节流
+        InputStream
+            FileInputStream
+            FilterInputStream
+                BufferInputStream
+                DataIInputStream
+                PushBakInputStream
+            ObjectInputStream
+            PipeInputStream
+            SequenceInputStream
+            StringBufferInputStream
+            ByteArrayInputStream
+
+
+        OutPutStream
+            FileOutputStream
+            FilterOutputStream
+                BufferedOutputStream
+                DataOutputStream
+                PrintStream
+            ObjectOutputStream
+            PipeOutputStream
+            ByteArrayOutputStream
+
+
+    1，创建路径
+        File  file=new File("F:/hello.mp3");
+    2,判断路径是否存在
+
+
+
+
+
+
+
+
+
+
+
+    字符流
+

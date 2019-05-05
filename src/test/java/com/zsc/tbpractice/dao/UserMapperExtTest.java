@@ -1,8 +1,13 @@
 package com.zsc.tbpractice.dao;
 
+import com.alibaba.fastjson.JSONObject;
+import com.zsc.base.abs.BaseController;
+import com.zsc.base.http.HttpResult;
+import com.zsc.base.http.HttpUtils;
 import com.zsc.general.entity.Teacher;
 import com.zsc.general.entity.User;
 import com.zsc.general.entity.UserTeacher;
+import com.zsc.tbpractice.http.dingding.HttpHelper;
 import com.zsc.tbpractice.vo.MapVo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,7 +22,7 @@ import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest()
-public class UserMapperExtTest {
+public class UserMapperExtTest extends BaseController {
     @Autowired
     private UserMapperExt userMapperExt;
 
@@ -95,5 +100,17 @@ public class UserMapperExtTest {
         System.out.println(integer);
 
 
+    }
+
+
+    @Test
+    public void test() throws Exception {
+
+        String url = "https://ygh.nbgh.gov.cn/testygh-app/oauth/accessToken?clientId=65f9932ec89e4de888674125f87128ce&clientSecret=c1d2f751cdac4c22a40a169fdc9df060";
+//"access_token" -> "fc3b7ed676a1191c77eba0277caa1083"
+
+        JSONObject jsonObject = HttpHelper.doGet(url);
+
+        System.out.println(jsonObject);
     }
 }

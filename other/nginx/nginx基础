@@ -1,0 +1,71 @@
+nginx
+    linux安装
+
+    目录
+        conf    配置
+        html    网页文件
+        logs    日志
+        sbin    主要的二进制程序（主程序）
+
+
+    启动
+        ./sbin/nginx
+
+    端口占用
+        ps aux | grep nginx
+
+    停止
+        ./nginx t           测试配置是否生效
+        ./nginx -s reload   配置立即生效
+        ./nginx -s stop     立即停止
+        ./nginx -s quit     优雅的停止（页面需求的的程序执行完毕后停止）
+        ./nginx -s reopen   重新打开日志（）
+
+    日志
+        logs
+            access.log  error.log    nginx.log
+        打开日志
+            more access.log
+        日志备份
+            将日志备份到其他地方
+                mv logs/access.log  logs/access.log.bak
+                    备注：指向了access.log.bak
+            新建（清空）access日志
+                touch   logs/access.log
+            重新指向
+                 ./nginx -s reopen   重新打开日志
+
+    进程
+        master  主进程
+        worker  子进程
+
+    conf配置
+        worker_processes 1;            #工作进程（并非越大越好，与cpu有关。调优的规律：cpu数量*核数为最大量）
+
+        #进程*连接==最大的连接量（同时也受网卡吞吐量的限制）
+        events{                         #事件：别人访问我们的网卡，监听80，443端口
+            worker_connections 1024;    #一个worker最多保持的连接
+        }
+
+
+        http{
+
+           每个server为一个虚拟主机
+            server{
+                listen 80;              #监听的端口
+                server_name localhost;
+                location /{
+                    root html/add;      #你的项目入口绝对路径
+                    index index.html
+                }
+            }
+            server{
+                listen 80;
+                server_name ddd.com;
+
+            }
+
+
+
+        }
+

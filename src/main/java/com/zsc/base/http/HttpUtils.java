@@ -144,6 +144,7 @@ public class HttpUtils {
     }
 
     public static HttpResult get(String url, String encoding, int timeOut, CookieStore cookies, List<Header> headers, String localAddress) {
+
         HttpClientBuilder clientBuilder = null;
         CloseableHttpClient httpClient = null;
         CloseableHttpResponse response = null;

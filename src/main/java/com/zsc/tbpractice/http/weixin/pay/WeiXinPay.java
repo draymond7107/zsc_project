@@ -1,4 +1,4 @@
-package com.zsc.tbpractice.http.weixin;
+package com.zsc.tbpractice.http.weixin.pay;
 
 
 import com.alibaba.fastjson.JSONObject;
