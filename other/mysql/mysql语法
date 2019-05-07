@@ -705,35 +705,3 @@ from srv2.库名.dbo.author b
 where not exists( 
 select * from author where id=b.id)
 go
-
-正文结束
-
-推荐阅读 ↓↓↓
-1. 我在GitHub上见过的那些沙雕项目
-2.Java程序员排行前10的错误，你有没有中？
-3.为什么阿里巴巴禁止直接使用日志系统(Log4j、Logback)中的 API
-4.Java开发者必须掌握的20个Spring 常用注解
-5.你还在用SimpleDateFormat？你的项目崩没？
-6.阿里云搭建web应用超详细全套完整图文教程！菜鸟也能看懂！
-7.你还在 Select * 吗？
-8.9个offer，12家公司，35场面试，计算机应届毕业生求职之路
-
-
-
-阅读原文阅读 8010 在看73
-精选留言
-写留言
- 1
-小晨 
- 学MySQL有什么推荐的书吗，目前只会一些最基本的操作
- 4 作者
-mysql技术内幕
- 3
-Fiona丶 
- 收藏了
- 
-゛守正 简放丶 
- MySQL技术内幕感觉很苦涩难懂哇😭
- 
-你会用vue了吗？ 
- 比较全，收藏了，编者辛苦了
