@@ -1,4 +1,4 @@
-package com.zsc.tbpractice.vo;
+package com.zsc.tbpractice.entityvo;
 
 import lombok.Data;
 

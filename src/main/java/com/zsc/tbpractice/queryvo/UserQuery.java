@@ -1,4 +1,4 @@
-package com.zsc.tbpractice.qo;
+package com.zsc.tbpractice.queryvo;
 
 
 import com.zsc.base.vo.QueryVO;

@@ -1,4 +1,4 @@
-package com.zsc.tbpractice.qo;
+package com.zsc.tbpractice.queryvo;
 
 import lombok.Data;
 

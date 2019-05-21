@@ -7,7 +7,7 @@ import com.zsc.base.utils.StringUtils;
 import com.zsc.general.dao.AdminMapper;
 import com.zsc.general.entity.Admin;
 import com.zsc.general.entity.AdminExample;
-import com.zsc.tbpractice.qo.BaseQuery;
+import com.zsc.tbpractice.queryvo.BaseQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

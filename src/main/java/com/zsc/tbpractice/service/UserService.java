@@ -3,15 +3,13 @@ package com.zsc.tbpractice.service;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.zsc.base.utils.StringUtils;
-import com.zsc.general.dao.UserMapper;
 import com.zsc.general.entity.Admin;
 import com.zsc.general.entity.User;
 import com.zsc.general.entity.UserExample;
 import com.zsc.general.entity.UserTeacher;
 import com.zsc.tbpractice.dao.UserMapperExt;
-import com.zsc.tbpractice.qo.BaseQuery;
-import com.zsc.tbpractice.qo.UserQuery;
-import com.zsc.tbpractice.vo.UserTeacherVo;
+import com.zsc.tbpractice.queryvo.BaseQuery;
+import com.zsc.tbpractice.entityvo.UserTeacherVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

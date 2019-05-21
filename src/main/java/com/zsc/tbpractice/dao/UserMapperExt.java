@@ -3,9 +3,8 @@ package com.zsc.tbpractice.dao;
 import com.zsc.general.dao.UserMapper;
 import com.zsc.general.entity.User;
 import com.zsc.general.entity.UserTeacher;
-import com.zsc.tbpractice.qo.UserQuery;
-import com.zsc.tbpractice.vo.MapVo;
-import com.zsc.tbpractice.vo.UserTeacherVo;
+import com.zsc.tbpractice.entityvo.MapVo;
+import com.zsc.tbpractice.entityvo.UserTeacherVo;
 import org.apache.ibatis.annotations.MapKey;
 import org.apache.ibatis.annotations.Param;
 
