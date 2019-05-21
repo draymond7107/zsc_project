@@ -2,23 +2,17 @@ package com.zsc.tbpractice.dao;
 
 import com.alibaba.fastjson.JSONObject;
 import com.zsc.base.abs.BaseController;
-import com.zsc.base.http.HttpResult;
-import com.zsc.base.http.HttpUtils;
-import com.zsc.general.entity.Teacher;
 import com.zsc.general.entity.User;
 import com.zsc.general.entity.UserTeacher;
 import com.zsc.tbpractice.http.dingding.HttpHelper;
-import com.zsc.tbpractice.vo.MapVo;
+import com.zsc.tbpractice.entityvo.MapVo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
-
-import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest()
