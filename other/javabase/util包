@@ -1,0 +1,57 @@
+日期
+
+    Date
+        Java在日期类中封装了有关日期和时间的信息，用户可以通过调用相应的方法来获取系统时间或设置日期和时间
+        构造：
+             Date()                     //    new Date()
+             Date (long date)           // long dateLong=Date.parse("Mon 6 Jan 1997 13:3:00");
+             Date(String s)
+             Date(int year,int month,int date)
+             Date(int year,int month,int date,int hrs,int min)
+             Date(int year,int month,int date,int hrs,int min,int sec)
+                    year的值为：需设定的年份-1900。例如需设定的年份是1997则year的值应为97，即1997-1900的结果。所以Date中可设定的年份最小为1900；
+                　　month的值域为0～11，0代表1月，11表代表12月；
+                　　date的值域在1～31之间；
+                　　hrs的值域在0～23之间。从午夜到次日凌晨1点间hrs=0，从中午到下午1点间hrs=12；
+                　　min和sec的值域在0～59之间。
+                　　例 Date day=new Date(11,3,4);
+
+        方法
+            static  slong UTC(int year,int month,int date,int hrs. int min,int sec)
+            static  long parse(String s)    字符串s有一定的格式，一般为  (星期 日 年 时间GMT+时区)   若不注明时区，则为本地时区。
+            void    setMonth(int month)
+            int     getMonth()
+            String  toString()
+            String  toLocalString()         本地习惯的时间表示法
+            String  toGMTString()           将给定日期对象转换成不同格式的字符串。它们对应的具体的格式可参看例子8.1。
+            int     getTimezoneOffset()     获取日期对象的时区偏移量
+
+    Calendar
+
+
+
+
+数据结构
+
+
+随机数类
+        java.util.Random::可以产生int、long、float、double以及Goussian等类型的随机数
+        java.lang.Math的Random(),只产生double型的随机数
+    构造
+        Random()                    Java产生随机数需要有一个基值seed，在第一种方法中基值缺省，则将系统时间作为seed。
+        Random(long seed)
+    普通方法
+        synonronized void setSeed(long seed)
+        int nextInt()                       产生一个整型随机数
+        long nextLong()                     产生一个long型随机数
+        nextFloat()                         产生一个Float型随机数
+        double nextDouble()                 产生一个Double型随机数
+        synchronized double nextGoussian()  产生一个double型的Goussian随机数
+
+向量类Vector
+
+
+
+
+
+

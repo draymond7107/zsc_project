@@ -1,0 +1,111 @@
+
+Integer
+        byteValue()                                      byte              以 byte 类型返回该 Integer 的值
+        CompareTo(Integer anotherInteger)                 int              在数字上比较 Integer 对象。如果这两个值相等，则返回0；如果调用对象的数值小于 anotherInteger 的数值，则返回负值；如果调用对象的数值大于  anotherInteger 的数值，则返回正值
+        equals(Object IntegerObj)                         boolean           比较此对象与指定对象是否相等
+        intValue()                                        int               以 int 型返回此 Integer 对象
+        shortValue()                                      short             以 short 型返回此 Integer  对象
+        longValue()                                       long              以 long 型返回此 Integer 对象
+        floatValue()                                      float             以 float 型返回此 Integer 对象
+        doubleValue()                                     double            以 double 型返回此 Integer 对象
+        toString()                                        String            返回一个表示该 Integer 值的 String 对象
+        valueOf(String str)                               Intege            返回保存指定的 String 值的 Integer 对象
+        parseInt(String str)                                int             将字符串参数作为有符号的十进制整数进行解析
+
+Character
+        isDigit(char ch)                                  boolean           确定字符是否为数字
+        isLetter(char ch)                                 boolean           确定字符是否为字母
+        isLowerCase(char ch)                              boolean           确定字符是否为小写字母
+        isUpperCase(char ch)                              boolean            确定字符是否为大写字母
+        isWhitespace(char ch)                             boolean            确定字符是否为空白字符
+        isUnicodeIdentifierStart(char ch)                 boolean            确定是否允许将指定字符作为 Unicode 标识符中的首字符
+
+Boolean
+        booleanValue()                                    boolean            将 Boolean 对象的值以对应的 boolean 值返回
+        equals(Object obj)                                boolean            判断调用该方法的对象与 obj 是否相等。当且仅当参数不是 null，而且与调用该方法的对象一样都表示同一个 boolean 值的 Boolean 对象时，才返回 true
+        parseBoolean(Strint s)                            boolean            将字符串参数解析为 boolean 值
+        toString()                                        String             返回表示该 boolean 值的 String 对象
+        valueOf(String s)                                 Boolean             返回一个用指定得字符串表示值的 boolean 值
+
+String
+        length()
+        equals()
+        equalsIgnoreCase()
+        concat()
+        charAt()
+        indexOf(int ch)                                     int                搜索字符 ch 第一次出现的索引
+        indexOf(String value)                               int                搜索字符串 value 第一次出现的索引
+        lastIndexOf(int ch)
+        lastIndexOf(String value)
+        substring(int index)
+        substring(int beginindex, int endindex)
+        trim()                                              String             返回一个前后不含任何空格的调用字符串的副本
+
+StringBuffer
+        StringBuffer()                                                          构造一个其中不带字符的字符串缓冲区，其初始容量为 16 个字符
+        StringBuffer(CharSequence seq)                                          构造一个字符串缓冲区，它包含与指定的 CharSequence 相同的字符
+        StringBuffer(int capacity)          	                                构造一个不带字符，但具有指定初始容量的字符串缓冲区
+        StringBuffer(String str)        	                                    构造一个字符串缓冲区，并将其内容初始化为指定的字符串内容
+
+        insert(int offsetm,Object s)                        StringBuffer        在 offetm 的位置插入字符串s
+        append(Object s)                                    StringBuffer        在字符串末尾追加字符串s
+        length()                                            int                 确定 StringBuffer 对象的长度
+        setCharAt(int pos,char ch)                          void                使用 ch 指定的新值设置 pos 指定的位置上的字符
+        toString()                                          String              转换为字符串形式
+        reverse()                                           StringBuffer        反转字符串
+        delete(int start, int end)                          StringBuffer        删除调用对象中从 start 位置开始直到 end 指定的索引（end-1）位置的字符序列
+        replace(int start, int end, String s)               StringBuffer        使用一组字符替换另一组字符。将用替换字符串从 start 指定的位置开始替换，直到 end 指定的位置结束
+
+Math
+        sin(double numvalue)                                double              计算角 numvalue 的正弦值
+        cos(double numvalue)                                double              计算角 numvalue 的余弦值
+        acos(double numvalue)                               double              计算 numvalue 的反余弦
+        asin(double numvalue)                               double              计算 numvalue 的反正弦
+        atan(double numvalue)                                double             计算 numvalue 的反正切
+        pow(double a, double b)                             double              计算 a 的 b 次方
+        sqrt(double numvalue)                               double              计算给定值的正平方根
+        abs(int numvalue)                                    int                计算 int 类型值 numvalue 的绝对值，也接收 long、float 和 double 类型的参数
+        ceil(double numvalue)                               double              返回大于等于 numvalue 的最小整数值
+        floor(double numvalue)                              double              返回小于等于 numvalue 的最大整数值
+        max(int a, int b)                                   int                 返回 int 型 a 和 b 中的较大值，也接收 long、float 和 double 类型的参数
+        min(int a, int b)                                   int                 返回 a 和 b 中的较小值，也可接受 long、float 和 double 类型的参数
+        rint(double numvalue)                               double              返回最接近 numvalue 的整数值
+        round(T arg)                                    arg 为 double 时返回 long，为 float 时返回 int            返回最接近arg的整数值
+        random()                                            double              返回带正号的 double 值，该值大于等于 0.0 且小于 1.0
+
+Class
+        getClass()
+        forName(String className)
+        .class
+        .TYPE                                               对于基本数据类型的封装类
+        getSuperClass()
+
+                            class 类没有共有的构造方法，它由 JVM 自动调用
+                            https://blog.csdn.net/u010858605/article/details/53454830
+
+Object
+        equals(Objectobj)                                   boolean               将当前对象实例与给定的对象进行比较，检查它们是否相等
+        finalize() throws Throwable                         void                  当垃圾回收器确定不存在对象的更多引用时，由对象的垃圾回收器调用此方法。通常被子类重写
+        getClass()                                          Class                  Class 对象
+        toString()                                          String                 返回此对象的字符串表示
+        wait() throws InterruptedException                  void                    在其他线程调用此对象的 notify() 方法或 notifyAll() 方法前，使当前线程进入等待状态
+
+Thread
+    线程不仅可以共享进程的内存，而且还拥有一个属于自己的内存空间，这段内存空间也叫做线程栈，是在建立线程时由系统分配的，主要用来保存线程内部所使用的数据，如线程执行函数中所定义的变量。
+
+
+Trowable
+
+Exception
+
+Error
+
+Process
+
+System
+
+Runtime
+
+ClassLoader
+
+
