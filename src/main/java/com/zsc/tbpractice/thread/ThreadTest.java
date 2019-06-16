@@ -1,4 +1,4 @@
-package com.zsc.tbpractice.multiThread;
+package com.zsc.tbpractice.thread;
 
 
 /**

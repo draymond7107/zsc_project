@@ -1,0 +1,16 @@
+注解
+    1;元注解
+        作用：基础注解，注解其他的注解;它们被用来提供对其它 annotation类型作说明
+        meta_annotation
+            1.@Target,
+            2.@Retention,
+            3.@Documented,
+            4.@Inherited
+
+        @Target  Annotation修饰的对象范围
+
+        @Retention  Annotation 作用时间
+            SOURCE:源文件有限
+            CLASSES：
+            RUNTTIME:运行时（自定义注解90%用这个）
+
