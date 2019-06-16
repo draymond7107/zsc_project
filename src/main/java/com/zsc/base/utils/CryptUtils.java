@@ -32,8 +32,8 @@ public class CryptUtils {
     /**
      * 如果系统中存在旧版本的数据，则此值不能修改，否则在进行密码解析的时候出错
      */
-    private final static String KEY = "_Sh66oP_";// 系统默认密匙8个长度
-    private final static String DES = "DES";// 采用DES算法，不是密匙
+    private final static String KEY = "_Sh66oP_";   // 系统默认密匙8个长度
+    private final static String DES = "DES";        // 采用DES算法，不是密匙
     private final static String utf8 = "utf-8";
     /**
      * AES加密字符串
