@@ -215,6 +215,18 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <!--apache poi Excel的表格数据处理-->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>3.17</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>3.17</version>
+        </dependency>
+
         <!--引用外部jar包-->
         <dependency>
             <groupId>com.taobao.top</groupId>
@@ -222,6 +234,10 @@
             <version>dingtalk-SNAPSHOT</version>
             <scope>system</scope>
             <systemPath>${pom.basedir}/libs/taobao-sdk-java-auto_1479188381469-20190408.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
         </dependency>
     </dependencies>
 

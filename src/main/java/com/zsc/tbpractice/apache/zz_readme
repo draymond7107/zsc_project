@@ -1,0 +1,51 @@
+BeanUtils
+    获取
+        1   Object cloneBean(Object bean)
+               bean2Object
+        *2   Map<String, String> describe(Object bean)
+               bean2Map
+               备注（bean中有arr[]需要自己再通过其他方法处理）
+        3   String[] getArrayProperty(Object bean, String name)
+               获取bean中的key为name的值，放到String[]数组
+        4   getIndexedProperty(Object bean, String name)
+                获取bean中的key为name的值，，放到String[]数组，取出某个索引位置的value
+                备注(name:::"hobby[1]")
+        5   getIndexedProperty(Object bean, String name, int index)
+                获取bean中的key为name的值，，放到String[]数组，取出index索引位置的value
+        6   getMappedProperty(Object bean, String name)
+                未知
+        7   getMappedProperty(Object bean, String name, String key)
+                 未知
+        8   String getProperty(Object bean, String name)
+                 获取bean中的key为name的值，，放到String[]数组，取出0索引位置的value
+        9   String getSimpleProperty(Object bean, String name)
+                 获取bean中的key为name的值，，放到String[]数组，取出0索引位置的value
+                 备注：9与8的区别
+
+
+    赋值
+        10  void copyProperty(Object bean, String name, Object value)
+                将name为value的值set到bean
+        *11  void populate(Object bean, Map<String, ? extends Object> properties)
+                map2Bean
+        12  void setProperty(Object bean, String name, Object value)
+                将name为value的值set到bean
+                备注（12与10的区别？？）
+
+CollectionUtils
+    1   boolean isNotEmpty(Collection coll)
+    2   boolean isEqualCollection(final Collection a, final Collection b)
+            两个集合的值是否相同，不论集合类型
+    3   Collection union(final Collection a, final Collection b)
+            并集
+    4   static Collection intersection(final Collection a, final Collection b)
+            交集
+    5   Collection disjunction(final Collection a, final Collection b)
+            补集  两者任意一方没有的值
+    6   Collection subtract(final Collection a, final Collection b)
+            差值  b集合没有的值
+    7   void forAllDo(Collection collection, Closure closure)
+            批量修改集合中对象属性的值（需要定义规则：：BeanPropertyValueChangeClosure）
+    8   Collection collect(Collection inputCollection, Transformer transformer)
+            将list中对象的某一个属性，放到一个集合中（需要定义规则：：BeanToPropertyValueTransformer）
+    9

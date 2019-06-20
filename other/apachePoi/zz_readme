@@ -1,0 +1,66 @@
+XLS与XLSX的导入与下载
+
+    1   引入依赖
+       <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>3.17</version>
+       </dependency>
+       <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>3.17</version>
+       </dependency>
+
+    2   工具类，判断XLSX与XLS类型
+
+        public class ExcelUtils {
+            // @描述：是否是2003的excel，返回true是2003
+            public static boolean isExcel2003(String filePath) {
+                return filePath.matches("^.+\\.(?i)(xls)$");
+            }
+
+            //@描述：是否是2007的excel，返回true是2007
+            public static boolean isExcel2007(String filePath) {
+                return filePath.matches("^.+\\.(?i)(xlsx)$");
+            }
+
+            /**
+             * 验证EXCEL文件
+             *
+             * @param filePath
+             * @return
+             */
+            public static boolean validateExcel(String filePath) {
+                if (filePath == null || !(isExcel2003(filePath) || isExcel2007(filePath))) {
+                    return false;
+                }
+                return true;
+            }
+        }
+
+    3   上传与下载的方法
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
