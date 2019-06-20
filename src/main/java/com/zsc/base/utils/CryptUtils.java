@@ -25,7 +25,6 @@ import javax.crypto.spec.SecretKeySpec;
 
 /**
  * 一些常用的加密类
- *
  * @author lujun
  */
 public class CryptUtils {

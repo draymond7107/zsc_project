@@ -1,7 +1,9 @@
 package com.zsc.utils;
 
 import com.zsc.base.Config;
+import com.zsc.base.utils.StringUtils;
 import org.apache.commons.codec.binary.Base64;
+
 import java.io.UnsupportedEncodingException;
 
 /**
@@ -89,4 +91,45 @@ public class CryptUtils {
         return null;
     }
 
+    public static String urlEncode(String url) {
+        return urlEncode(url, Config.ENC_UTF);
+    }
+
+    /**
+     * url加密
+     *
+     * @param url
+     * @param enc
+     * @return
+     */
+    public static String urlEncode(String url, String enc) {
+        if (StringUtils.isEmpty(url)) return url;
+        try {
+
+            return java.net.URLEncoder.encode(url, enc);
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    /**
+     * url解码
+     *
+     * @param url
+     * @return
+     */
+    public static String urlDecode(String url) {
+        return urlDecode(url, Config.ENC_UTF);
+    }
+
+    public static String urlDecode(String url, String enc) {
+        if (StringUtils.isEmpty(url)) return url;
+        try {
+            return java.net.URLDecoder.decode(url, enc);
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
