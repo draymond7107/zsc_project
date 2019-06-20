@@ -3,8 +3,8 @@
 //import com.zsc.base.exception.SysException;
 //
 //import java.io.Serializable;
-//import java.util.HashSet;
-//import java.util.Set;
+//import java.util包.HashSet;
+//import java.util包.Set;
 //
 ///**
 // * 用户的基础类

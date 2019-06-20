@@ -12,7 +12,7 @@ import java.util.Random;
 import java.util.regex.Pattern;
 
 /**
- * 日期转换类 转换一个 java.util.Date 对象到一个字符串以及 一个字符串到一个 java.util.Date 对象.
+ * 日期转换类 转换一个 java.util包.Date 对象到一个字符串以及 一个字符串到一个 java.util包.Date 对象.
  * @author icelove
  */
 public final class DateUtils {
