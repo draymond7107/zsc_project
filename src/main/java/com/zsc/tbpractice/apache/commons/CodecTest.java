@@ -15,11 +15,13 @@ import org.apache.commons.codec.binary.Base64;
 
 public class CodecTest {
     public static void main(String[] args) {
-        //     base64Encode();
-        //      test2();
-        // base64Incode();
-        //test3();
-        test4();
+//        base64Encode();
+//        base64Incode();
+//        base64Incode();
+//        test3();
+//        urlDecode();
+        md5();
+
     }
 
     public static void base64Encode() {
@@ -50,7 +52,7 @@ public class CodecTest {
         System.out.println(s);
     }
 
-    public static void test4() {
+    public static void urlDecode() {
         String url = "http://www.baidu.com?name=zsc&pass=sss";
         String urlEncode = com.zsc.utils.CryptUtils.urlEncode(url, Config.ENC_UTF);
         System.out.println(urlEncode);
@@ -58,7 +60,11 @@ public class CodecTest {
         System.out.println(111);
     }
 
-    public static void test5() {
+    public static void md5() {
+        String str = "我们在哪？";
+        String s = com.zsc.utils.CryptUtils.md5(str);
+        System.out.println(s);
+
     }
 
     public static void test6() {
