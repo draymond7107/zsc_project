@@ -15,6 +15,5 @@ public class PhoneFactory2 {
 
     public Ipad createIpad() {
         return new Ipad();
-
     }
 }

@@ -8,7 +8,7 @@ package com.zsc.tbpractice.design.z01_simpleFactory;
  */
 
 public class PhoneFactory3 {
-
+    /*脱离了多态的范围*/
     public static HuaWei createHuawei() {
         return new HuaWei();
     }

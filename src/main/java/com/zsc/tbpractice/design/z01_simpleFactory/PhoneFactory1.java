@@ -9,8 +9,8 @@ package com.zsc.tbpractice.design.z01_simpleFactory;
 
 public class PhoneFactory1 {
 
-    public  Sender createSender(Sender sender) {
-
+    public Sender createSender(Sender sender) {
+        /*使用多态*/
         if (sender instanceof HuaWei) {
             return new HuaWei();
         } else if (sender instanceof Ipad) {
