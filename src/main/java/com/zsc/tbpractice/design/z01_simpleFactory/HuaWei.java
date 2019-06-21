@@ -1,4 +1,4 @@
-package com.zsc.tbpractice.design.simpleFactory;
+package com.zsc.tbpractice.design.z01_simpleFactory;
 
 
 /**
