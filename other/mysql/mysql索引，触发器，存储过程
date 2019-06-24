@@ -1,1 +1,54 @@
-g
+索引
+    1   显示所有的索引
+        show index  from   TABLE;
+
+    2   创建索引
+            普通索引
+            create  index   idx_indexName ON  TABLE (colum(length));
+            唯一索引
+            create  unique index idx_indexName   ON    TABLE(column(length));
+            组合普通索引
+            create  index   idx_indexName   ON    TABLE(column1(length),column2(length)...);
+            组合唯一索引
+            create  unique index    idx_indexName ON    TABLE(column1(length),column2(length)...);
+
+    3   索引长度创建取值
+            select count(distinct left(`COLUMN`,LENGTH))/count(*) from TABLE;
+
+    4   删除索引
+            drop    index   idx_indexName   ON  TABLE;
+
+    5   显示索引
+            show    index from  TABLE;
+
+    6   强制使用索引
+            select  * from tb_goods fource index(idx_indexName) where   title='111';
+
+索引类型
+    B-tree
+        支持范围查找、
+    Hash
+
+索引失效
+    1   like 字段前面有%
+             为什么不能使用覆盖索引
+    2   is null/is not null
+    3   索引类型为range的后面的字段
+    4   or
+    5   不符合最左原则
+    6   range 后面的字段不再使用索引
+    7   数据较少，直接使用了全局扫描（可以强制使用force index(idx_indexName)）
+    8
+
+
+fileSort
+    1   order by  的字段没有索引，或者有索引没有使用
+        没有where 直接 order by
+                EXPLAIN SELECT * FROM tb_goods FORCE INDEX(idx_title)  ORDER BY title ;
+                不但全表扫描，还有文件排序fileSort
+
+    2   order by 需要where字段使用到了该索引
+
+    3   where 最左原则中间使用了范围查找，后面的字段还有建立在索引上，会使用fileSort
+
+覆盖索引
