@@ -8,11 +8,15 @@ import com.zsc.general.entity.User;
 import com.zsc.tbpractice.queryvo.BaseQuery;
 import com.zsc.tbpractice.service.UserService;
 import com.zsc.tbpractice.entityvo.UserTeacherVo;
+import com.zsc.utils.UserUtils;
+import org.apache.commons.lang3.math.NumberUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Random;
 
 /**
  * @author ZhangSuchao
@@ -60,10 +64,37 @@ public class UserController extends BaseController {
     public JsonResult insertUserInfo(User user) {
 
         userService.insertUserInfo(user);
-      //   int i = 1 / 0;
+        //   int i = 1 / 0;
 
         return sendSuccess(null);
     }
 
+
+    public JsonResult insertUser() {
+
+
+        int i = 1;
+        while (i <= 100) {
+            User user = new User();
+            user.setUserName(UserUtils.getChineseName());
+            user.setTrueName(UserUtils.getChineseName());
+            Random random = new Random();
+            int classId = random.nextInt(100);
+            user.setClassId(classId);
+            user.setPassword("");
+            user.setAge(random.nextInt(80));
+            int i1 = random.nextInt(10);
+            if (i1 % 2 == 0) {
+                user.setSex("M");
+            } else {
+                user.setSex("F");
+            }
+
+
+
+        }
+
+        return sendSuccess();
+    }
 
 }

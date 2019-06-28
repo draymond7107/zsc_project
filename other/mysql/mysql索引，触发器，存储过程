@@ -52,3 +52,68 @@ fileSort
     3   where 最左原则中间使用了范围查找，后面的字段还有建立在索引上，会使用fileSort
 
 覆盖索引
+
+
+
+explain
+    id  越大越先执行，相等按照顺序执行
+    select_type
+        simple
+        primary
+        subquery
+        deceiver    衍生表
+            子查询在from后面
+        dependent  subquery 子查询中使用了 where   id  in(select   id  from    tb_goods)
+            子查询与依赖子查询，一个使用=匹配，另一个使用范围
+
+        union
+        dependent   union   union连接在子查询中
+
+    table
+
+    type
+        当前表内的访问方式
+        ALL index   range   ref eq_ref  const
+
+    possible_keys
+
+    key
+
+    key_length
+
+    ref
+        引用到的上一个表的列，关联查询中出现
+    rows
+        查询的行数
+
+    filtered
+        储存引擎再service层过滤后，剩下多少记录符合条件返回的数据百分比
+    extra
+        const row not found  表记录为空
+        use where
+        Using index 使用索引覆盖
+        Using index condition 先使用索引过滤，再回表查询
+        Using join buffer (Block Nested Loop), Using join buffer (Batched Key Access)
+        Using filesort 使用文件内排序，在内存中或磁盘中做此事情
+        Using temporary 使用临时表
+
+
+
+问题
+    不走索引
+        1   不走覆盖索引
+            CREATE INDEX idx_userName_trueName ON tb_user(user_name,true_name);
+            EXPLAIN SELECT true_name FROM tb_user FORCE INDEX(idx_userName_trueName) where user_name = '游客1' AND true_name LIKE '%张苏超%';
+            去掉前面的%会走索引
+
+        2   EXPLAIN SELECT * FROM tb_user  FORCE INDEX(idx_userName_trueName) where user_name LIKE '%张苏%' AND true_name ='zhang' ;
+    走索引
+        EXPLAIN SELECT * FROM tb_user where true_name is  null ;
+            Using index condition
+            5.5版本不走索引，5.6以后走索引
+            使用索引，但是需要回表查询
+
+
+
+
+
