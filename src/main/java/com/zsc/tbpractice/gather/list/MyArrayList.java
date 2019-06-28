@@ -1,5 +1,7 @@
 package com.zsc.tbpractice.gather.list;
 
+import org.springframework.transaction.annotation.Transactional;
+
 /**
  * @author ZhangSuchao
  * @create 2019/6/28
@@ -38,12 +40,32 @@ public class MyArrayList<E> {
         return true;
     }
 
-    public Object get(int index) {
-        if (size < index) {
+    public E get(int index) {
+        if (index >= size) {
             throw new IndexOutOfBoundsException();
         }
-        return defaultArr[index];
+        return (E) defaultArr[index];
+    }
 
+    /**
+     * 删除
+     *
+     * @param index
+     */
+    @Transactional
+    public E remove(int index) {
+        if (index >= size) {
+            throw new IndexOutOfBoundsException();
+        }
+        E oldVal = (E) defaultArr[index];
+
+        //index后面的全部元素的长度
+        int later = size - index - 1;
+        if (later > 0)  //如果是最后一个，不会再创建新的数组
+            System.arraycopy(defaultArr, index + 1, defaultArr, index, later);
+        //size为10时，最大角标为9, defaultArr[--size]整好为9，remove一个，最后一个角标为null
+        defaultArr[--size] = null;
+        return oldVal;
     }
 
 }

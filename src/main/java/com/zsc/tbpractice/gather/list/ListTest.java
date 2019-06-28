@@ -34,7 +34,8 @@ public class ListTest {
         myArrayList.add(12);
 
 
-        Object o = myArrayList.get(12);
+        Integer integer1 = myArrayList.get(10);
+        Integer integer2 = myArrayList.get(11);
 
     }
 }
