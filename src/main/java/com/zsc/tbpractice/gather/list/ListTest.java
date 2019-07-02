@@ -1,9 +1,9 @@
 package com.zsc.tbpractice.gather.list;
 
 
-import com.zsc.base.utils.JsonUtils;
-
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * @author ZhangSuchao
@@ -15,6 +15,22 @@ public class ListTest {
 
     public static void main(String[] args) {
 
+//        arrayListTest();
+        linkedListTest();
+
+    }
+
+    public static void linkedListTest() {
+        List list = new LinkedList<Integer>();
+        list.add(1);
+        Integer o =(Integer) list.get(0);
+        System.out.println(o);
+
+
+        MyLinkedList myLinkedList = new MyLinkedList<Integer>();
+    }
+
+    public static void arrayListTest() {
         ArrayList<Integer> arrayList = new ArrayList();
         arrayList.add(12);
         Integer integer = arrayList.get(0);
@@ -37,5 +53,10 @@ public class ListTest {
         Integer integer1 = myArrayList.get(10);
         Integer integer2 = myArrayList.get(11);
 
+
+        MyArrayList<Integer> myArrayList2 = new MyArrayList(20);
+        int length = myArrayList2.length();
+        int size = myArrayList2.size();
+        System.out.println(length + "  " + size);
     }
 }
