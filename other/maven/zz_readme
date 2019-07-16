@@ -1,0 +1,21 @@
+<!--
+常用命令
+清理:
+    mvn clean
+
+编译代码:
+    mvn compile -Ppro (-P***编译选择环境)
+
+组合代码(编译)：
+    mvn clean compile -Ppro
+
+jar包:
+    mvn clean compile org.apache.maven.plugins:maven-jar-plugin:3.1.1:jar -Ppro
+    mvn package -Dmaven.test.skip=true -Ppro
+
+war包:
+    mvn org.apache.maven.plugins:maven-war-plugin:3.2.2:war
+
+打包war或者jar看<packaging>war</packaging>配置成什么
+
+-->

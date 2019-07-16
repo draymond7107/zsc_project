@@ -2,6 +2,8 @@ package com.zsc.tbpractice.gather.list;
 
 
 /**
+ * LinkedList的Node节点
+ *
  * @author ZhangSuchao
  * @create 2019/7/2
  * @since 1.0.0
