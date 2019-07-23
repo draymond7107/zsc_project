@@ -36,7 +36,7 @@ public class Config{
 	}
 
 	public static void main(String[] args){
-		System.out.println(getProperty("http.userAgent"));
+		System.out.println(getProperty("api.userAgent"));
 	}
 	/**
 	 * 多位置查询配置文件路径
@@ -110,7 +110,7 @@ public class Config{
 	}
 
 	public static String getSoftDomainHttp(){
-		return "http://" + getProperty("soft.domain");
+		return "api://" + getProperty("soft.domain");
 	}
 
 	public static String getSoftDomainHttps(){
@@ -146,7 +146,7 @@ public class Config{
 	 * @return
 	 */
 	public static String getScheme(){
-		return useSSL()?"https://":"http://";
+		return useSSL()?"https://":"api://";
 	}
 
 	public static boolean getBoolean(String name){
@@ -223,11 +223,11 @@ public class Config{
 	}
 
 	public static int getHttpSocketTimeout(){
-		return getIntProperty("http.socket.timeout");
+		return getIntProperty("api.socket.timeout");
 	}
 
 	public static int getHttpSocketTimeout(int httpSocketTimeout){
-		return getIntProperty("http.socket.timeout",httpSocketTimeout);
+		return getIntProperty("api.socket.timeout",httpSocketTimeout);
 	}
 
 	private static String replace(String value){

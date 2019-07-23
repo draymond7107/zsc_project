@@ -165,7 +165,7 @@ public class HttpUtils {
                 };
                 SSLContext sslcontext = SslUtils.createIgnoreVerifySSL();
                 SSLConnectionSocketFactory sslcs = new SSLConnectionSocketFactory(sslcontext, hostnameVerifier);
-                Registry<ConnectionSocketFactory> socketFactoryRegistry = RegistryBuilder.<ConnectionSocketFactory>create().register("http", PlainConnectionSocketFactory.INSTANCE).register("https", sslcs).build();
+                Registry<ConnectionSocketFactory> socketFactoryRegistry = RegistryBuilder.<ConnectionSocketFactory>create().register("api", PlainConnectionSocketFactory.INSTANCE).register("https", sslcs).build();
                 PoolingHttpClientConnectionManager connManager = new PoolingHttpClientConnectionManager(socketFactoryRegistry);
                 clientBuilder.setConnectionManager(connManager);
             }
@@ -780,7 +780,7 @@ public class HttpUtils {
 
     public static String getFullDomain(String url) {
         String temp = "";
-        if (url.indexOf("http://") == 0) {
+        if (url.indexOf("api://") == 0) {
             temp = url.substring(7);
         } else if (url.indexOf("https://") == 0) {
             temp = url.substring(8);

@@ -6,7 +6,7 @@ import java.io.File;
 
 public class FileInfo {
     /**
-     * preUrl  ：  http://**.**.com/news/thumb
+     * preUrl  ：  api://**.**.com/news/thumb
      * preDir  :  /var/
      * virDir  :  /2015/08/17
      * fileName : 14123123123.jpg

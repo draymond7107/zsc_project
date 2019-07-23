@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.zsc.base.abs.BaseController;
 import com.zsc.general.entity.User;
 import com.zsc.general.entity.UserTeacher;
-import com.zsc.tbpractice.http.dingding.HttpHelper;
+import com.zsc.api.dingding.HttpHelper;
 import com.zsc.tbpractice.entityvo.MapVo;
 import org.junit.Test;
 import org.junit.runner.RunWith;

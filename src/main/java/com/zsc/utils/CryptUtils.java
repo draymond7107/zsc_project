@@ -1,19 +1,13 @@
 package com.zsc.utils;
 
-import com.taobao.api.internal.toplink.embedded.websocket.util.StringUtil;
 import com.zsc.base.Config;
 import com.zsc.base.utils.StringUtils;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.codec.binary.Hex;
-import org.bouncycastle.crypto.Digest;
-import org.bouncycastle.crypto.digests.SHA1Digest;
 
-import javax.crypto.KeyGenerator;
 import javax.crypto.Mac;
-import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 import java.io.UnsupportedEncodingException;
-import java.security.InvalidKeyException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -263,7 +257,7 @@ public class CryptUtils {
         }
         // 字符数组组合成字符串返回
         return new String(resultCharArray);
-
-
     }
+
+    // TODO: 2019/7/23 含有密钥的加密/解密  AES
 }
