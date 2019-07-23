@@ -73,14 +73,12 @@
         </dependency>
 
         <!-- common公共基础jar包 -->
-
         <!--org.apache.poi.util.IOUtils-->
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
             <version>3.17</version>
         </dependency>
-
         <dependency>
             <groupId>commons-lang</groupId>
             <artifactId>commons-lang</artifactId>
@@ -221,11 +219,15 @@
             <artifactId>poi</artifactId>
             <version>3.17</version>
         </dependency>
+
+
+        <!-- CSV 表格处理 -->
         <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi-ooxml</artifactId>
-            <version>3.17</version>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-csv</artifactId>
+            <version>1.7</version>
         </dependency>
+
 
         <!--引用外部jar包-->
         <dependency>
