@@ -11,9 +11,9 @@ public class ThreadTest {
 //    //#####################Thread方式#######################################
 //    public static void main(String[] args) {
 //
-//        MyThread myThread = new MyThread();
-//        MyThread myThread1 = new MyThread();
-//        MyThread myThread2 = new MyThread();
+//        MyThread1 myThread = new MyThread1();
+//        MyThread1 myThread1 = new MyThread1();
+//        MyThread1 myThread2 = new MyThread1();
 //        myThread.start();
 //        myThread1.start();
 //        myThread2.start();
@@ -35,7 +35,7 @@ public class ThreadTest {
 
 //   // ###################run与start的不同####################################
 //    public static void main(String[] args) {
-//        MyThread myThread = new MyThread();
+//        MyThread1 myThread = new MyThread1();
 //        myThread.start();
 //        myThread.run();     //不开启线程
 //    }

@@ -11,8 +11,8 @@ package com.zsc.thread;
  * @since 1.0.0
  */
 
-public class MyThread extends Thread {
-    private Integer ticket = 10;
+public class MyThread2 extends Thread {
+    private static Integer ticket = 10;
 
     @Override
     public void run() {

@@ -1,7 +1,6 @@
-package com.zsc.tbpractice.io;
+package com.zsc.io;
 
 
-import com.zsc.base.vo.FileInfo;
 import org.springframework.stereotype.Component;
 
 import java.io.FileInputStream;
