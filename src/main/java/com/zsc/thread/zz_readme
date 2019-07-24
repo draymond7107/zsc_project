@@ -28,11 +28,21 @@
             start():启动一个新的线程，新线程会自动调用run()方法，start()不能重复调用
             run():  与普通的方法类似，直接调用则不会创建新的线程
 
-    4   synchronized
+    4   synchronized怎么实现锁住代码块？
 
+    5   Thread与Runnable采用策略模式，Thread相同，而Runnable的实现不同
 
+    6   Thread继承类与Runnable实现类都有，则运行Thread的实现里的run()方法
 
+    7   Thread与ThreadGroup
+           new Thread 如果没有传ThreadGroup,则使用启动该线程的线程组 ThreadGroup,后期可以使用api查看该ThreadGroup里面的线程数量
 
+    8   多线程、JVM内存、虚拟机栈
+
+    9   stackSize   线程栈的大小
+        依赖于平台，
+
+    10  Runnable 是执行单元，而不是线程，把线程的控制部分与业务部分分开
 
 
 
