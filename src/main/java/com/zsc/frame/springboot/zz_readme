@@ -1,0 +1,22 @@
+spring boot
+    快速开发框架，快速整合常用的的第三方框架，完全采用注解化，简化xml，内置http服务器（tomcat(默认),jetty），最终以java应用程序执行（不用打war包放到tomcat执行），
+    使用java命令 java -jar的命令
+    原理：使用maven的继承方式+springMVC注解方式+内嵌tomcat
+
+    1：spring boot与spring的关系
+
+    2：spring boot与springMVC的关系
+        2.1：springBoot Web组件集成springMVC框架
+        2.2：springBoot启动springMVC的时候没有传统的配置文件,怎么启动的springMVC？
+        2.3：springMVC3.0之后产生注解，支持注解方式启动MVC （使用代码的方式启动mvc）
+        2.4：
+    3：
+    4：
+    5：
+    6：
+    7：
+    8：
+    9：
+    10：
+    11：
+    12：

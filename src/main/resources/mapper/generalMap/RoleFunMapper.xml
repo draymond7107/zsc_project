@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.zsc.general.dao.RoleFunMapper" >
-  <resultMap id="BaseResultMap" type="com.zsc.general.entity.RoleFun" >
+<mapper namespace="com.zsc.tbpractice.general.dao.RoleFunMapper" >
+  <resultMap id="BaseResultMap" type="com.zsc.tbpractice.general.entity.RoleFun" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="role_code" property="roleCode" jdbcType="VARCHAR" />
     <result column="fun_no" property="funNo" jdbcType="VARCHAR" />
@@ -71,7 +71,7 @@
   <sql id="Base_Column_List" >
     id, role_code, fun_no, create_time, modify_time, create_id, modify_id
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zsc.general.entity.RoleFunExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zsc.tbpractice.general.entity.RoleFunExample" >
     select
     <if test="distinct" >
       distinct
@@ -96,13 +96,13 @@
     delete from sys_role_fun
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.zsc.general.entity.RoleFunExample" >
+  <delete id="deleteByExample" parameterType="com.zsc.tbpractice.general.entity.RoleFunExample" >
     delete from sys_role_fun
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.zsc.general.entity.RoleFun" >
+  <insert id="insert" parameterType="com.zsc.tbpractice.general.entity.RoleFun" >
     insert into sys_role_fun (id, role_code, fun_no, 
       create_time, modify_time, create_id, 
       modify_id)
@@ -110,7 +110,7 @@
       #{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP}, #{createId,jdbcType=INTEGER}, 
       #{modifyId,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.zsc.general.entity.RoleFun" >
+  <insert id="insertSelective" parameterType="com.zsc.tbpractice.general.entity.RoleFun" >
     insert into sys_role_fun
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -159,7 +159,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.zsc.general.entity.RoleFunExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.zsc.tbpractice.general.entity.RoleFunExample" resultType="java.lang.Integer" >
     select count(*) from sys_role_fun
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -207,7 +207,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zsc.general.entity.RoleFun" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.zsc.tbpractice.general.entity.RoleFun" >
     update sys_role_fun
     <set >
       <if test="roleCode != null" >
@@ -231,7 +231,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.zsc.general.entity.RoleFun" >
+  <update id="updateByPrimaryKey" parameterType="com.zsc.tbpractice.general.entity.RoleFun" >
     update sys_role_fun
     set role_code = #{roleCode,jdbcType=VARCHAR},
       fun_no = #{funNo,jdbcType=VARCHAR},

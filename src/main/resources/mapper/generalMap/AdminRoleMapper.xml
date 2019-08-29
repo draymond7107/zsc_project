@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.zsc.general.dao.AdminRoleMapper" >
-  <resultMap id="BaseResultMap" type="com.zsc.general.entity.AdminRole" >
+<mapper namespace="com.zsc.tbpractice.general.dao.AdminRoleMapper" >
+  <resultMap id="BaseResultMap" type="com.zsc.tbpractice.general.entity.AdminRole" >
     <id column="ID" property="id" jdbcType="INTEGER" />
     <result column="admin_id" property="adminId" jdbcType="INTEGER" />
     <result column="role_code" property="roleCode" jdbcType="VARCHAR" />
@@ -71,7 +71,7 @@
   <sql id="Base_Column_List" >
     ID, admin_id, role_code, create_time, modify_time, create_id, modify_id
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zsc.general.entity.AdminRoleExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zsc.tbpractice.general.entity.AdminRoleExample" >
     select
     <if test="distinct" >
       distinct
@@ -96,13 +96,13 @@
     delete from sys_admin_role
     where ID = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.zsc.general.entity.AdminRoleExample" >
+  <delete id="deleteByExample" parameterType="com.zsc.tbpractice.general.entity.AdminRoleExample" >
     delete from sys_admin_role
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.zsc.general.entity.AdminRole" >
+  <insert id="insert" parameterType="com.zsc.tbpractice.general.entity.AdminRole" >
     insert into sys_admin_role (ID, admin_id, role_code, 
       create_time, modify_time, create_id, 
       modify_id)
@@ -110,7 +110,7 @@
       #{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP}, #{createId,jdbcType=INTEGER}, 
       #{modifyId,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.zsc.general.entity.AdminRole" >
+  <insert id="insertSelective" parameterType="com.zsc.tbpractice.general.entity.AdminRole" >
     insert into sys_admin_role
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -159,7 +159,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.zsc.general.entity.AdminRoleExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.zsc.tbpractice.general.entity.AdminRoleExample" resultType="java.lang.Integer" >
     select count(*) from sys_admin_role
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -207,7 +207,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zsc.general.entity.AdminRole" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.zsc.tbpractice.general.entity.AdminRole" >
     update sys_admin_role
     <set >
       <if test="adminId != null" >
@@ -231,7 +231,7 @@
     </set>
     where ID = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.zsc.general.entity.AdminRole" >
+  <update id="updateByPrimaryKey" parameterType="com.zsc.tbpractice.general.entity.AdminRole" >
     update sys_admin_role
     set admin_id = #{adminId,jdbcType=INTEGER},
       role_code = #{roleCode,jdbcType=VARCHAR},

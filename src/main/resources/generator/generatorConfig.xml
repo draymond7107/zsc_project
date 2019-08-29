@@ -23,7 +23,7 @@
         </javaTypeResolver>
 
         <!-- 生成模型的包名和位置-->
-        <javaModelGenerator targetPackage="com.zsc.general.entity" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="com.zsc.tbpractice.general.entity" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
@@ -39,7 +39,7 @@
 
 
         <!-- 生成DAO的包名和位置-->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.zsc.general.dao" targetProject="src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.zsc.tbpractice.general.dao" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 

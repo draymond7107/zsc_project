@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.zsc.general.dao.TclassesMapper" >
-  <resultMap id="BaseResultMap" type="com.zsc.general.entity.Tclasses" >
+<mapper namespace="com.zsc.tbpractice.general.dao.TclassesMapper" >
+  <resultMap id="BaseResultMap" type="com.zsc.tbpractice.general.entity.Tclasses" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="class_name" property="className" jdbcType="VARCHAR" />
     <result column="address" property="address" jdbcType="VARCHAR" />
@@ -72,7 +72,7 @@
   <sql id="Base_Column_List" >
     id, class_name, address, class_location, photo, create_id, create_time, deleted
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zsc.general.entity.TclassesExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zsc.tbpractice.general.entity.TclassesExample" >
     select
     <if test="distinct" >
       distinct
@@ -97,13 +97,13 @@
     delete from tb_classes
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.zsc.general.entity.TclassesExample" >
+  <delete id="deleteByExample" parameterType="com.zsc.tbpractice.general.entity.TclassesExample" >
     delete from tb_classes
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.zsc.general.entity.Tclasses" >
+  <insert id="insert" parameterType="com.zsc.tbpractice.general.entity.Tclasses" >
     insert into tb_classes (id, class_name, address, 
       class_location, photo, create_id, 
       create_time, deleted)
@@ -111,7 +111,7 @@
       #{classLocation,jdbcType=VARCHAR}, #{photo,jdbcType=VARCHAR}, #{createId,jdbcType=INTEGER}, 
       #{createTime,jdbcType=INTEGER}, #{deleted,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.zsc.general.entity.Tclasses" >
+  <insert id="insertSelective" parameterType="com.zsc.tbpractice.general.entity.Tclasses" >
     insert into tb_classes
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -166,7 +166,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.zsc.general.entity.TclassesExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.zsc.tbpractice.general.entity.TclassesExample" resultType="java.lang.Integer" >
     select count(*) from tb_classes
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -218,7 +218,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zsc.general.entity.Tclasses" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.zsc.tbpractice.general.entity.Tclasses" >
     update tb_classes
     <set >
       <if test="className != null" >
@@ -245,7 +245,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.zsc.general.entity.Tclasses" >
+  <update id="updateByPrimaryKey" parameterType="com.zsc.tbpractice.general.entity.Tclasses" >
     update tb_classes
     set class_name = #{className,jdbcType=VARCHAR},
       address = #{address,jdbcType=VARCHAR},

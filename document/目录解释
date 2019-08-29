@@ -1,0 +1,32 @@
+
+    annotation  注解
+
+    apache      apache的工具包
+
+    api         调用第三方的接口（钉钉，腾讯）
+
+    base        基础包（常用的对象，以及工具类）
+
+    collocate   项目配置（过滤器，拦截器,全局异常处理）
+
+    constants   常量
+
+    design      设计模式
+
+    frame       框架
+
+    gather      集合
+
+    io
+
+    java        java的基础操作
+
+    jvm
+
+    mina
+
+    table       表格处理
+
+    tbpractice  ssm框架，主要是mapper的sql书写
+
+    utils       本项目特有的工具

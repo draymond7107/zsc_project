@@ -1,7 +1,7 @@
 package com.zsc.apache.commons;
 
 
-import com.zsc.general.entity.User;
+import com.zsc.tbpractice.general.entity.User;
 import org.apache.commons.beanutils.BeanPropertyValueChangeClosure;
 import org.apache.commons.beanutils.BeanPropertyValueEqualsPredicate;
 import org.apache.commons.beanutils.BeanToPropertyValueTransformer;

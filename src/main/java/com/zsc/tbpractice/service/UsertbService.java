@@ -3,8 +3,8 @@ package com.zsc.tbpractice.service;
 
 import com.github.pagehelper.PageHelper;
 import com.zsc.base.utils.StringUtils;
-import com.zsc.general.dao.UsertbMapper;
-import com.zsc.general.entity.UsertbExample;
+import com.zsc.tbpractice.general.dao.UsertbMapper;
+import com.zsc.tbpractice.general.entity.UsertbExample;
 import com.zsc.tbpractice.queryvo.BaseQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -61,7 +61,7 @@
     1，替换内置的tomcat                pom.xml与TbpracticeApplication
     2，全局跨域设置                    com.zsc.collocate.spring.WebMvcConfig
         https://www.jianshu.com/p/e124fdf59a02
-    3，全局异常处理                    com.zsc.base.handler.GlobalExceptionHandler
+    3，全局异常处理                    com.zsc.collocate.handler.GlobalExceptionHandler
     4，fastJson返回参数处理
     5，过滤器                           com.zsc.collocate.filter
     6，拦截器                           com.zsc.collocate.interceptors

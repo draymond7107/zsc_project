@@ -4,7 +4,7 @@ package com.zsc.tbpractice.controller;
 import com.github.pagehelper.PageInfo;
 import com.zsc.base.abs.BaseController;
 import com.zsc.base.spring.JsonResult;
-import com.zsc.general.entity.Admin;
+import com.zsc.tbpractice.general.entity.Admin;
 import com.zsc.tbpractice.queryvo.BaseQuery;
 import com.zsc.tbpractice.service.AdminService;
 import org.apache.commons.logging.Log;

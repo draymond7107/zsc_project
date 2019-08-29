@@ -1,7 +1,7 @@
 package com.zsc.tbpractice.service;
 
-import com.zsc.general.entity.User;
-import com.zsc.general.entity.UserTeacher;
+import com.zsc.tbpractice.general.entity.User;
+import com.zsc.tbpractice.general.entity.UserTeacher;
 import com.zsc.tbpractice.entityvo.UserTeacherVo;
 import org.junit.Test;
 import org.junit.runner.RunWith;

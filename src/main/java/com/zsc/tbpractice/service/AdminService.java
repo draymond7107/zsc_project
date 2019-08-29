@@ -4,13 +4,13 @@ package com.zsc.tbpractice.service;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.zsc.base.utils.StringUtils;
-import com.zsc.general.dao.AdminMapper;
-import com.zsc.general.entity.Admin;
-import com.zsc.general.entity.AdminExample;
+import com.zsc.tbpractice.general.dao.AdminMapper;
+import com.zsc.tbpractice.general.entity.Admin;
+import com.zsc.tbpractice.general.entity.AdminExample;
 import com.zsc.tbpractice.queryvo.BaseQuery;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -20,7 +20,7 @@ import java.util.List;
  */
 @Service
 public class AdminService {
-    @Autowired
+    @Resource
     private AdminMapper adminMapper;
 
 

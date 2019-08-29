@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.zsc.general.dao.AdminFunMapper" >
-  <resultMap id="BaseResultMap" type="com.zsc.general.entity.AdminFun" >
+<mapper namespace="com.zsc.tbpractice.general.dao.AdminFunMapper" >
+  <resultMap id="BaseResultMap" type="com.zsc.tbpractice.general.entity.AdminFun" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="module_name" property="moduleName" jdbcType="VARCHAR" />
     <result column="module_code" property="moduleCode" jdbcType="VARCHAR" />
@@ -77,7 +77,7 @@
     id, module_name, module_code, fun_no, fun_name, fun_group, fun_url, description, 
     create_time, modify_time, create_id, modify_id
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zsc.general.entity.AdminFunExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zsc.tbpractice.general.entity.AdminFunExample" >
     select
     <if test="distinct" >
       distinct
@@ -102,13 +102,13 @@
     delete from sys_admin_fun
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.zsc.general.entity.AdminFunExample" >
+  <delete id="deleteByExample" parameterType="com.zsc.tbpractice.general.entity.AdminFunExample" >
     delete from sys_admin_fun
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.zsc.general.entity.AdminFun" >
+  <insert id="insert" parameterType="com.zsc.tbpractice.general.entity.AdminFun" >
     insert into sys_admin_fun (id, module_name, module_code, 
       fun_no, fun_name, fun_group, 
       fun_url, description, create_time, 
@@ -120,7 +120,7 @@
       #{modifyTime,jdbcType=TIMESTAMP}, #{createId,jdbcType=INTEGER}, #{modifyId,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.zsc.general.entity.AdminFun" >
+  <insert id="insertSelective" parameterType="com.zsc.tbpractice.general.entity.AdminFun" >
     insert into sys_admin_fun
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -199,7 +199,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.zsc.general.entity.AdminFunExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.zsc.tbpractice.general.entity.AdminFunExample" resultType="java.lang.Integer" >
     select count(*) from sys_admin_fun
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -267,7 +267,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zsc.general.entity.AdminFun" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.zsc.tbpractice.general.entity.AdminFun" >
     update sys_admin_fun
     <set >
       <if test="moduleName != null" >
@@ -306,7 +306,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.zsc.general.entity.AdminFun" >
+  <update id="updateByPrimaryKey" parameterType="com.zsc.tbpractice.general.entity.AdminFun" >
     update sys_admin_fun
     set module_name = #{moduleName,jdbcType=VARCHAR},
       module_code = #{moduleCode,jdbcType=VARCHAR},

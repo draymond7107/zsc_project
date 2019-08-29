@@ -37,5 +37,4 @@ public class WebMvcConfig extends WebMvcConfigurationSupport {  //WebMvcConfigur
     }
 //如果有安全框架，需要在框架中启用CORS;还有一种基于"过滤器"的跨域设置
 
-
 }

@@ -13,7 +13,7 @@ import com.zsc.base.spring.JsonResult;
 import com.zsc.base.utils.CryptUtils;
 import com.zsc.base.utils.SignUtils;
 import com.zsc.base.utils.StringUtils;
-import com.zsc.general.entity.User;
+import com.zsc.tbpractice.general.entity.User;
 import com.zsc.tbpractice.TbpracticeApplication;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

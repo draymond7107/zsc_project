@@ -51,7 +51,7 @@
     </select>
 
     <!--第二种 useGeneratedKeys="true" keyProperty="id" -->
-    <insert id="insertUserInfo" parameterType="com.zsc.general.entity.User">
+    <insert id="insertUserInfo" parameterType="com.zsc.tbpractice.general.entity.User">
 
         <selectKey resultType="int" order="AFTER" keyProperty="id">
             SELECT LAST_INSERT_ID() AS id
@@ -79,7 +79,7 @@
 
     </insert>
 
-    <select id="selectUserListByIdList" parameterType="list" resultType="com.zsc.general.entity.User">
+    <select id="selectUserListByIdList" parameterType="list" resultType="com.zsc.tbpractice.general.entity.User">
         SELECT * FROM tb_user WHERE id IN
         <foreach collection="idList" item="userId" open="(" separator="," close=")">
             #{userId}
@@ -88,7 +88,7 @@
     </select>
 
 
-    <select id="selectUserListByIdSet" resultType="com.zsc.general.entity.User" parameterType="collection">
+    <select id="selectUserListByIdSet" resultType="com.zsc.tbpractice.general.entity.User" parameterType="collection">
         SELECT * FROM tb_user WHERE id IN
         <foreach collection="idSet" item="id" open="(" separator="," close=")">
             #{id}
@@ -105,7 +105,7 @@
     </select>
 
 
-    <select id="selectUserByIdSetResultMap" resultType="com.zsc.general.entity.User" parameterType="collection">
+    <select id="selectUserByIdSetResultMap" resultType="com.zsc.tbpractice.general.entity.User" parameterType="collection">
         SELECT * FROM tb_user WHERE id IN
         <foreach collection="idSet" item="id" open="(" separator="," close=")">
             #{id}

@@ -1,7 +1,7 @@
 package com.zsc.apache.commons;
 
 
-import com.zsc.general.entity.User;
+import com.zsc.tbpractice.general.entity.User;
 import lombok.Data;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.beanutils.PropertyUtils;

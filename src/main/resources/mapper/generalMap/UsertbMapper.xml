@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.zsc.general.dao.UsertbMapper">
-  <resultMap id="BaseResultMap" type="com.zsc.general.entity.Usertb">
+<mapper namespace="com.zsc.tbpractice.general.dao.UsertbMapper">
+  <resultMap id="BaseResultMap" type="com.zsc.tbpractice.general.entity.Usertb">
     <result column="id" jdbcType="BIGINT" property="id" />
     <result column="uname" jdbcType="VARCHAR" property="uname" />
     <result column="ucreatetime" jdbcType="TIMESTAMP" property="ucreatetime" />
@@ -68,7 +68,7 @@
   <sql id="Base_Column_List">
     id, uname, ucreatetime, age
   </sql>
-  <select id="selectByExample" parameterType="com.zsc.general.entity.UsertbExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.zsc.tbpractice.general.entity.UsertbExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -83,19 +83,19 @@
       order by ${orderByClause}
     </if>
   </select>
-  <delete id="deleteByExample" parameterType="com.zsc.general.entity.UsertbExample">
+  <delete id="deleteByExample" parameterType="com.zsc.tbpractice.general.entity.UsertbExample">
     delete from usertb
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.zsc.general.entity.Usertb">
+  <insert id="insert" parameterType="com.zsc.tbpractice.general.entity.Usertb">
     insert into usertb (id, uname, ucreatetime, 
       age)
     values (#{id,jdbcType=BIGINT}, #{uname,jdbcType=VARCHAR}, #{ucreatetime,jdbcType=TIMESTAMP}, 
       #{age,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.zsc.general.entity.Usertb">
+  <insert id="insertSelective" parameterType="com.zsc.tbpractice.general.entity.Usertb">
     insert into usertb
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -126,7 +126,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.zsc.general.entity.UsertbExample" resultType="java.lang.Integer">
+  <select id="countByExample" parameterType="com.zsc.tbpractice.general.entity.UsertbExample" resultType="java.lang.Integer">
     select count(*) from usertb
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
