@@ -1,4 +1,4 @@
-package com.zsc.design;
+package com.zsc.design.z14_strategy;
 
 /**
  * 策略模式
