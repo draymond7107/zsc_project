@@ -1,0 +1,72 @@
+类加载
+    ：将class文件加载到内存
+
+    1：JVM基本结构
+        类加载器、执行引擎、运行时数据区（堆、栈，方法区）、本地接口
+
+        Class Files -> ClassLoader -> 运行时数据区 -> 执行引擎、本地库接口 -> 本地方法库
+
+    2：类的装载
+        加载、连接（验证、准备、解析）、初始化、使用、卸载
+
+    3：Class 保存类的定义或者结构， 放到堆中？为什么不是方法区
+
+    4：初始化：执行类的“构造器”，为类的静态变量赋予正确的初始值
+
+    5：构造器
+        static 变量
+        static 代码块
+            谁在前谁先执行
+
+    6:构造方法
+        实例化对象
+
+
+    7：构造器与构造方法
+        构造器：构造的是类，为类的静态变量、静态代码块赋值
+        构造方法：构造的是实例对象
+
+    8：类加载器双亲委派模型
+        默认的加载器都有一个父类加载器，（除了启动加载器，不是继承关系，是包含与组合的关系）
+        classLoader试图加载类的时候，必须将加载的任务委托给父类加载器，如果父类加载器没有加载到该类的时候，反过来委托给发起者，
+        自己本身加载，如果还没有，则报错classNotFound 异常。能避免类的重复加载
+
+        某个特定的类加载器在接到加载类的请求时，首先将加载任务委托给父类加载器，依次递归，如果父类加载器可以完成类加载任务，
+        就成功返回；只有父类加载器无法完成此加载任务时，才自己去加载。
+        使用双亲委派模型的好处在于Java类随着它的类加载器一起具备了一种带有优先级的层次关系。例如类java.lang.Object，
+        它存在在rt.jar中，无论哪一个类加载器要加载这个类，最终都是委派给处于模型最顶端的Bootstrap ClassLoader进行加载，
+        因此Object类在程序的各种类加载器环境中都是同一个类。相反，如果没有双亲委派模型而是由各个类加载器自行加载的话，
+        如果用户编写了一个java.lang.Object的同名类并放在ClassPath中，那系统中将会出现多个不同的Object类，程序将混乱。
+        因此，如果开发者尝试编写一个与rt.jar类库中重名的Java类，可以正常编译，但是永远无法被加载运行。
+        https://blog.csdn.net/u014138443/article/details/90581981
+
+    9：JDK自带加载器
+           Bootstrap ClassLoader
+                JVM要启动java程序，需要自己先启动，JVM也是一个程序 C++写的
+                最顶层的加载类，主要加载核心类库，%JRE_HOME%\lib下的rt.jar、resources.jar、charsets.jar和class等。
+                另外需要注意的是可以通过启动jvm时指定-Xbootclasspath和路径来改变Bootstrap ClassLoader的加载目录。
+                比如java -Xbootclasspath/a:path被指定的文件追加到默认的bootstrap路径中。我们可以打开我的电脑，在上面的目录下查看，
+                看看这些jar包是不是存在于这个目录。
+           Extention ClassLoader
+                extends  ClassLoader 扩展的类加载器，加载目录%JRE_HOME%\lib\ext目录下的jar包和class文件。还可以加载-D java.ext.dirs选项指定的目录。
+           Appclass Loader
+                extends  ClassLoader 也称为SystemAppClass 加载当前应用的classpath的所有类。  src下面的就是classPath
+
+    10：自定义加载器
+            xxx extends ClassLoader
+                完全自定义路径
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

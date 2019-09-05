@@ -5,3 +5,8 @@
     Alt+entry               补全接收值
     ctrl+shift+space        由前往后补全代码
 
+    ctrl + F12              弹出类的所有方法
+    alt + 7                 左侧变为类的方法
+    F4                      跳到所在的类或方法
+
+
