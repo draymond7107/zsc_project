@@ -4,6 +4,7 @@ package com.zsc.java8.functionalInterface;
 
 
 //构造器的引用
+@FunctionalInterface
 public interface ConstructorLambda {
 
     String test(char[] str);

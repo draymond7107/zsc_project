@@ -1,4 +1,4 @@
-package com.zsc.java8;
+package com.zsc.java8.functionalInterface;
 
 public interface InterfaceDemo2 {
     static int staticPara = 2;

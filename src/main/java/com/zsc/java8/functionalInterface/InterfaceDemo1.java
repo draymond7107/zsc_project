@@ -1,6 +1,7 @@
-package com.zsc.java8;
+package com.zsc.java8.functionalInterface;
 
 //接口可以写“非抽象方法”
+@FunctionalInterface
 public interface InterfaceDemo1 {
     //抽象方法
     void sysHello();

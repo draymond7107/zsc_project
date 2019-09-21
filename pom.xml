@@ -10,7 +10,7 @@
 
     </parent>
     <groupId>com.zsc</groupId>
-    <artifactId>tbpractice</artifactId>
+    <artifactId>draymond</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>tbpractice</name>
     <description>Demo project for Spring Boot</description>

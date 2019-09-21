@@ -39,13 +39,12 @@ public class Demo {
         System.out.println("classLoader==" + classLoader);    //null 为什么不是Bootstrap? Bootstrap是C++写的，null代表就是Bootstrap
     }
 
-
     /*
-     *  if (parent != null) {
+      classLoad 加载
+      if (parent != null) {
             c = parent.loadClass(name, false);
          } else {
             c = findBootstrapClassOrNull(name);   为 null时从Bootstrap加载
          }
      */
-
 }

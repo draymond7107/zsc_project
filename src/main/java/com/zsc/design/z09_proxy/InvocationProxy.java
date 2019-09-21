@@ -56,7 +56,6 @@ class DynamicProxy implements InvocationHandler {
     public Object invoke(Object proxy, Method method, Object[] args)  {
         //执行前加强的工作
         System.out.println("start-->>");
-
         //调用目标方法
         Object invoke = null;
         try {
