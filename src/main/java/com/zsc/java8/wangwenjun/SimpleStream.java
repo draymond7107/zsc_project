@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
+ * 常用的stream操作：filter、map、Collectors.toList\
  * @author ZhangSuchao
  * @create 2019/9/21
  * @since 1.0.0
@@ -61,9 +62,9 @@ public class SimpleStream {
     }
     //  ##################### #1 end 要求 菜单里的卡路里 低于400的菜的名字，按照从小到大排序  ##################################
 
-    // #3 filter 过滤
+    // #3 filter 过滤,返回卡路里小于500的
     @Test
-    public void test3() {
+    public void filter() {
 
         List<Dish> dishList = DishList.getDishList();
         Predicate<Dish> filterPredicate = (dish) -> dish.getCalories() < 500;
@@ -74,109 +75,54 @@ public class SimpleStream {
         }
     }
 
-    //  #4 limit
+    //  #4 limit 仅仅输出前面3个dish
     @Test
-    public void test4() {
+    public void limit() {
         List<Dish> dishList = DishList.getDishList();
         List<Dish> collect = dishList.stream().limit(3).collect(Collectors.toList());
         collect.stream().forEach(System.out::println);
     }
 
-    // #5 skip
+    // #5 skip  跳过前面3个dish输出
     @Test
-    public void test5() {
+    public void skip() {
         List<Dish> dishList = DishList.getDishList();
         dishList.stream().skip(3).forEach(System.out::println);
     }
 
-    // #6 map
+    // #6 toList  取出食物的名字集合
     @Test
-    public void test6() {
+    public void toList() {
         List<Dish> dishList = DishList.getDishList();
         Function<Dish, String> function = (dish) -> dish.getName();
         List<String> collect = dishList.stream().map(function).collect(Collectors.toList());
         collect.stream().forEach(System.out::println);
     }
 
-    // #7 flatMap
+    // #6.2 toSet 取出食物的名字集合
     @Test
-    public void test7() {
-        String[] words = {"Hello", "World"};
-        //
-        Stream<String[]> stream = Arrays.stream(words).map(w -> w.split(""));  //  Stream<String[]>
-        //    stream.flatMap()
-
+    public void toSet() {
+        List<Dish> dishList = DishList.getDishList();
+        Set<String> collect = dishList.stream().map(Dish::getName).collect(Collectors.toSet());
+        Optional.ofNullable(collect).ifPresent(System.out::println); //  [season fruit, chicken, pizza, salmon, beef, pork, rice, french fries, prawns]
     }
 
-    // #8 flatMap
+    // #6.3 toMap  key 食物的name ：value 食物的卡路里
     @Test
-    public void test8() {
-
+    public void toMap() {
+        List<Dish> dishList = DishList.getDishList();
+        Map<String, Integer> collect = dishList.stream().collect(Collectors.toMap(Dish::getName, Dish::getCalories));
+        Optional.ofNullable(collect).ifPresent(System.out::println);    //{season fruit=120, chicken=400, pizza=550, salmon=450, beef=700, rice=350, pork=800, prawns=300, french fries=530}
     }
 
-    // #9 flatMap
+
+    // #7 flatMap  ??
     @Test
-    public void test9() {
-
+    public void flatMap() {
+        Stream<List<Integer>> stream = Stream.of(Arrays.asList(1, 2), Arrays.asList(3, 4, 5));
+        stream.flatMap(list -> list.stream())
+                .forEach(s -> System.out.println(s));
     }
 
-    // #10 flatMap
-    @Test
-    public void test10() {
-
-    }
-
-    public static void main(String[] args) {
-        List<User> userList = new ArrayList<>();
-
-
-        User user1 = new User();
-        user1.setId(1);
-        user1.setRealName("张三");
-        userList.add(user1);
-
-        User user2 = new User();
-        user2.setId(2);
-        user2.setRealName("张三");
-        userList.add(user2);
-
-        User user3 = new User();
-        user3.setId(3);
-        user3.setRealName("王武");
-        userList.add(user3);
-
-        User user4 = new User();
-        user4.setId(4);
-        user4.setRealName("王武伟");
-        userList.add(user4);
-
-        //找出name相同，id不同的用户
-        List<User> uniqueUserList = new ArrayList<>();
-
-        for (int i = 0; i < userList.size(); i++) {
-            User user = userList.get(i);
-            User existUser = isExistName(uniqueUserList, user);
-            if (existUser != null) {
-                uniqueUserList.remove(existUser);
-            } else {
-                uniqueUserList.add(user);
-            }
-        }
-
-
-        uniqueUserList.stream().forEach(System.out::println);
-    }
-
-    //返回已经存在的用户的id
-    private static User isExistName(List<User> uniqueUserList, User user) {
-        if (uniqueUserList.size() == 0) return null;
-        for (User user1 : uniqueUserList) {
-            String realName = user1.getRealName();
-            if (user.getRealName().equals(realName)) {
-                return user1;
-            }
-        }
-        return null;
-    }
 
 }

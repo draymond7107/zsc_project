@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class FillterApple {
+public class AppleFillter {
 
     //使用策略模式
     public interface AppleFilter {
@@ -16,7 +16,7 @@ public class FillterApple {
         List<Apple> apples = Arrays.asList(new Apple("red", 150), new Apple("blue", 100), new Apple("green", 200));
 
         //  apples.add(new Apple("红色", 100)); java.lang.UnsupportedOperationException
-        FillterApple fillterApple = new FillterApple();
+        AppleFillter fillterApple = new AppleFillter();
         List<Apple> greenApples = fillterApple.findGreenApples(apples);
         assert greenApples.size() == 2;
         for (Apple apple :
