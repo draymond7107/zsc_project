@@ -3,6 +3,8 @@ package com.zsc.java8.wangwenjun;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 /**
  * @author ZhangSuchao
@@ -26,6 +28,15 @@ public class DishList {
                 new Dish("salmon", false, 450, Dish.Type.FISH)
         );
         return dishList;
+    }
+
+    public static List ListfilterDish(List<Dish> list, Predicate predicate) {
+
+        return list.stream().filter(item -> predicate.test(item)).collect(Collectors.toList());
+    }
+
+    public static boolean isGreen(Apple apple) {
+        return "green".equals(apple.getColor());
     }
 
 }
