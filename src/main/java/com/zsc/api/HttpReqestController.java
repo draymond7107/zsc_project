@@ -20,7 +20,7 @@ import java.util.Map;
 @RequestMapping("/request")
 public class HttpReqestController extends BaseController {
 
-    @RequestMapping("/httpTest")
+    @RequestMapping("/httpRequest")
     public JsonResult httpTest(HttpServletRequest request, HttpServletResponse response) {
         //获得客户机信息
         StringBuffer requestURL = request.getRequestURL();  //方法返回客户端发出请求时的完整URL
@@ -71,5 +71,18 @@ public class HttpReqestController extends BaseController {
         System.out.println("");
 
         return null;
+    }
+
+    /**
+     * response的使用
+     *
+     * @param request
+     * @param response
+     * @return
+     */
+    @RequestMapping("/httpResponse")
+    public void httpResponse(HttpServletRequest request, HttpServletResponse response) {
+
+
     }
 }

@@ -9,8 +9,8 @@
         <relativePath/> <!-- lookup parent from repository -->
 
     </parent>
-    <groupId>com.zsc</groupId>
-    <artifactId>draymond</artifactId>
+    <groupId>com.draymond</groupId>
+    <artifactId>zsc_project</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>tbpractice</name>
     <description>Demo project for Spring Boot</description>

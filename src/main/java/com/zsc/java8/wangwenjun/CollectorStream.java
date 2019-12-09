@@ -6,6 +6,7 @@ import java.util.*;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.ConcurrentSkipListMap;
 import java.util.function.BinaryOperator;
+import java.util.function.ToDoubleFunction;
 import java.util.stream.Collectors;
 
 public class CollectorStream {
@@ -15,10 +16,13 @@ public class CollectorStream {
 
     }
 
-    // averagingDouble
+    // averagingDouble  list中某个属性的均值
     @Test
     public void averagingDouble() {
         List<Dish> dishList = DishList.getDishList();
+        //ToDoubleFunction 也是一种Function,输入+输出
+        ToDoubleFunction<Dish> toDoubleFunction = dish -> dish.getCalories();
+
         Double caloriesAverage = dishList.stream().collect(Collectors.averagingDouble(Dish::getCalories));
         Optional.ofNullable(caloriesAverage).ifPresent(System.out::println);
     }
@@ -40,10 +44,12 @@ public class CollectorStream {
         Optional.ofNullable(collect).ifPresent(System.out::println);
     }
 
-    // collectingAndThen  前一个结果出参作为或一个的入参
+    // collectingAndThen  前一个结果出参作为后一个的入参
     @Test
     public void collectingAndThen() {
         List<Dish> dishList = DishList.getDishList();
+        //   collectingAndThen(Collector<T,A,R> downstream,Function<R,RR> finisher)
+
         String collect = dishList.stream().collect(Collectors.collectingAndThen(Collectors.averagingLong(Dish::getCalories), average ->
                 "卡路里的平均值为 " + average));
         Optional.ofNullable(collect).ifPresent(System.out::println);
@@ -94,7 +100,7 @@ public class CollectorStream {
         Optional.ofNullable(collect).ifPresent(System.out::println);
     }
 
-    //groupingBy 指定返回值类型
+    //groupingBy 指定返回值类型  根据类型，统计
     @Test
     public void groupingBy3() {
         List<Dish> dishList = DishList.getDishList();
@@ -323,6 +329,21 @@ public class CollectorStream {
 
     }
 
+
+    // sort
+    @Test
+    public void sort() {
+        List<Dish> dishList = DishList.getDishList();
+        //先按照类型，再按照重量排序
+        Comparator<Dish> comparator = Comparator.comparing(Dish::getName).thenComparingInt(Dish::getCalories);
+        List<Dish> collect = dishList.parallelStream().sorted(comparator).collect(Collectors.toList());
+        Optional.ofNullable(collect).ifPresent(System.out::println);
+    }
+
+    @Test
+    public void reduce() {
+
+    }
 
 
 }
